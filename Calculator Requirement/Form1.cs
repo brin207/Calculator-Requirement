@@ -19,17 +19,17 @@ namespace Calculator_Requirement
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            outptPreview.Text = outptPreview.Text + "2";
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            outptPreview.Text = outptPreview.Text + "1";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            outptPreview.Text = "";
         }
 
         private void calcDesign_Load(object sender, EventArgs e)
@@ -40,6 +40,86 @@ namespace Calculator_Requirement
         private void outptPreview_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "1";
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "3";
+        }
+
+        private void btn4_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "4";
+        }
+
+        private void btn5_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "5";
+        }
+
+        private void btn6_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "6";
+        }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "7";
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "8";
+        }
+
+        private void btn9_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "9";
+        }
+
+        private void btn0_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "0";
+        }
+
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + ".";
+        }
+
+        private void btnEq_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "=";
+        }
+
+        private void btnPos_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "+";
+        }
+
+        private void btnNeg_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "-";
+        }
+
+        private void btnx_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "*";
+        }
+
+        private void btnDiv_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text + "/";
+        }
+
+        private void btnClr_Click(object sender, EventArgs e)
+        {
+            outptPreview.Text = outptPreview.Text.Remove(outptPreview.Text.Length - 1, 1);
         }
     }
 }
