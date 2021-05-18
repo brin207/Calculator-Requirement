@@ -12,10 +12,12 @@ namespace Calculator_Requirement
 {
     public partial class calcDesign : Form
     {
+
         public calcDesign()
         {
             InitializeComponent();
         }
+
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -99,7 +101,11 @@ namespace Calculator_Requirement
 
         private void btnPos_Click(object sender, EventArgs e)
         {
-            outptPreview.Text = outptPreview.Text + "+";
+            
+            outptDisp.AppendText(outptPreview.Text + "+");
+            outptPreview.Text = "";
+            
+
         }
 
         private void btnNeg_Click(object sender, EventArgs e)
@@ -120,6 +126,11 @@ namespace Calculator_Requirement
         private void btnClr_Click(object sender, EventArgs e)
         {
             outptPreview.Text = outptPreview.Text.Remove(outptPreview.Text.Length - 1, 1);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

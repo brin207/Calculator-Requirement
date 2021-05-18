@@ -50,6 +50,7 @@ namespace Calculator_Requirement
             this.btnDiv = new System.Windows.Forms.Button();
             this.btnClrAll = new System.Windows.Forms.Button();
             this.btnClr = new System.Windows.Forms.Button();
+            this.outptDisp = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // outptPreview
@@ -59,12 +60,12 @@ namespace Calculator_Requirement
             | System.Windows.Forms.AnchorStyles.Right)));
             this.outptPreview.BackColor = System.Drawing.Color.DarkGray;
             this.outptPreview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.outptPreview.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.outptPreview.ForeColor = System.Drawing.SystemColors.Window;
-            this.outptPreview.Location = new System.Drawing.Point(11, 26);
-            this.outptPreview.Multiline = true;
+            this.outptPreview.Location = new System.Drawing.Point(11, 74);
             this.outptPreview.Name = "outptPreview";
             this.outptPreview.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.outptPreview.Size = new System.Drawing.Size(461, 112);
+            this.outptPreview.Size = new System.Drawing.Size(461, 56);
             this.outptPreview.TabIndex = 0;
             this.outptPreview.TextChanged += new System.EventHandler(this.outptPreview_TextChanged);
             // 
@@ -353,12 +354,29 @@ namespace Calculator_Requirement
             this.btnClr.UseVisualStyleBackColor = false;
             this.btnClr.Click += new System.EventHandler(this.btnClr_Click);
             // 
+            // outptDisp
+            // 
+            this.outptDisp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.outptDisp.BackColor = System.Drawing.Color.DarkGray;
+            this.outptDisp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.outptDisp.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.outptDisp.ForeColor = System.Drawing.SystemColors.Window;
+            this.outptDisp.Location = new System.Drawing.Point(12, 34);
+            this.outptDisp.Name = "outptDisp";
+            this.outptDisp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.outptDisp.Size = new System.Drawing.Size(461, 34);
+            this.outptDisp.TabIndex = 20;
+            this.outptDisp.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // calcDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(484, 611);
+            this.Controls.Add(this.outptDisp);
             this.Controls.Add(this.btnClr);
             this.Controls.Add(this.btnClrAll);
             this.Controls.Add(this.btnDiv);
@@ -412,6 +430,7 @@ namespace Calculator_Requirement
         private System.Windows.Forms.Button btnDiv;
         private System.Windows.Forms.Button btnClrAll;
         private System.Windows.Forms.Button btnClr;
+        private System.Windows.Forms.TextBox outptDisp;
     }
 }
 
