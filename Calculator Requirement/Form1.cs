@@ -102,7 +102,7 @@ namespace Calculator_Requirement
         private void btnPos_Click(object sender, EventArgs e)
         {
             
-            outptDisp.AppendText(outptPreview.Text + "+");
+            outptDisp.AppendText("+" + outptPreview.Text);
             outptPreview.Text = "";
             
 
@@ -110,17 +110,20 @@ namespace Calculator_Requirement
 
         private void btnNeg_Click(object sender, EventArgs e)
         {
-            outptPreview.Text = outptPreview.Text + "-";
+            outptDisp.AppendText("-" + outptPreview.Text);
+            outptPreview.Text = "";
         }
 
         private void btnx_Click(object sender, EventArgs e)
         {
-            outptPreview.Text = outptPreview.Text + "*";
+            outptDisp.AppendText("*" + outptPreview.Text);
+            outptPreview.Text = "";
         }
 
         private void btnDiv_Click(object sender, EventArgs e)
         {
-            outptPreview.Text = outptPreview.Text + "/";
+            outptDisp.AppendText("/" + outptPreview.Text);
+            outptPreview.Text = "";
         }
 
         private void btnClr_Click(object sender, EventArgs e)
@@ -129,6 +132,21 @@ namespace Calculator_Requirement
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPosNeg_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
         {
 
         }

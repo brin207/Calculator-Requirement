@@ -41,16 +41,21 @@ namespace Calculator_Requirement
             this.btn3 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.btn0 = new System.Windows.Forms.Button();
-            this.btnPosNeg = new System.Windows.Forms.Button();
             this.btnDot = new System.Windows.Forms.Button();
             this.btnNeg = new System.Windows.Forms.Button();
             this.btnPos = new System.Windows.Forms.Button();
             this.btnEq = new System.Windows.Forms.Button();
             this.btnx = new System.Windows.Forms.Button();
             this.btnDiv = new System.Windows.Forms.Button();
+            this.btnClrPrev = new System.Windows.Forms.Button();
             this.btnClrAll = new System.Windows.Forms.Button();
-            this.btnClr = new System.Windows.Forms.Button();
             this.outptDisp = new System.Windows.Forms.TextBox();
+            this.btnPosNeg = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnSquareRt = new System.Windows.Forms.Button();
+            this.btnSquared = new System.Windows.Forms.Button();
+            this.btnFraction = new System.Windows.Forms.Button();
+            this.btnPercent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // outptPreview
@@ -76,7 +81,7 @@ namespace Calculator_Requirement
             this.btn7.FlatAppearance.BorderSize = 0;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn7.Location = new System.Drawing.Point(120, 291);
+            this.btn7.Location = new System.Drawing.Point(121, 307);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(60, 60);
             this.btn7.TabIndex = 1;
@@ -91,7 +96,7 @@ namespace Calculator_Requirement
             this.btn8.FlatAppearance.BorderSize = 0;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn8.Location = new System.Drawing.Point(186, 291);
+            this.btn8.Location = new System.Drawing.Point(187, 307);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(60, 60);
             this.btn8.TabIndex = 2;
@@ -106,7 +111,7 @@ namespace Calculator_Requirement
             this.btn9.FlatAppearance.BorderSize = 0;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn9.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn9.Location = new System.Drawing.Point(252, 291);
+            this.btn9.Location = new System.Drawing.Point(253, 307);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(60, 60);
             this.btn9.TabIndex = 3;
@@ -121,7 +126,7 @@ namespace Calculator_Requirement
             this.btn4.FlatAppearance.BorderSize = 0;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn4.Location = new System.Drawing.Point(120, 357);
+            this.btn4.Location = new System.Drawing.Point(121, 373);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(60, 60);
             this.btn4.TabIndex = 4;
@@ -136,7 +141,7 @@ namespace Calculator_Requirement
             this.btn5.FlatAppearance.BorderSize = 0;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn5.Location = new System.Drawing.Point(186, 357);
+            this.btn5.Location = new System.Drawing.Point(187, 373);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(60, 60);
             this.btn5.TabIndex = 5;
@@ -151,7 +156,7 @@ namespace Calculator_Requirement
             this.btn6.FlatAppearance.BorderSize = 0;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn6.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn6.Location = new System.Drawing.Point(252, 357);
+            this.btn6.Location = new System.Drawing.Point(253, 373);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(60, 60);
             this.btn6.TabIndex = 6;
@@ -166,7 +171,7 @@ namespace Calculator_Requirement
             this.btn2.FlatAppearance.BorderSize = 0;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn2.Location = new System.Drawing.Point(186, 423);
+            this.btn2.Location = new System.Drawing.Point(187, 439);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(60, 60);
             this.btn2.TabIndex = 7;
@@ -181,7 +186,7 @@ namespace Calculator_Requirement
             this.btn3.FlatAppearance.BorderSize = 0;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn3.Location = new System.Drawing.Point(252, 423);
+            this.btn3.Location = new System.Drawing.Point(253, 439);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(60, 60);
             this.btn3.TabIndex = 8;
@@ -196,7 +201,7 @@ namespace Calculator_Requirement
             this.btn1.FlatAppearance.BorderSize = 0;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn1.Location = new System.Drawing.Point(120, 423);
+            this.btn1.Location = new System.Drawing.Point(121, 439);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(60, 60);
             this.btn1.TabIndex = 9;
@@ -211,28 +216,13 @@ namespace Calculator_Requirement
             this.btn0.FlatAppearance.BorderSize = 0;
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn0.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn0.Location = new System.Drawing.Point(186, 489);
+            this.btn0.Location = new System.Drawing.Point(187, 505);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(60, 60);
             this.btn0.TabIndex = 10;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = false;
             this.btn0.Click += new System.EventHandler(this.btn0_Click);
-            // 
-            // btnPosNeg
-            // 
-            this.btnPosNeg.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPosNeg.BackColor = System.Drawing.Color.Gray;
-            this.btnPosNeg.FlatAppearance.BorderSize = 0;
-            this.btnPosNeg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPosNeg.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnPosNeg.Location = new System.Drawing.Point(120, 489);
-            this.btnPosNeg.Name = "btnPosNeg";
-            this.btnPosNeg.Size = new System.Drawing.Size(60, 60);
-            this.btnPosNeg.TabIndex = 11;
-            this.btnPosNeg.Text = "+/-";
-            this.btnPosNeg.UseVisualStyleBackColor = false;
-            this.btnPosNeg.Click += new System.EventHandler(this.button10_Click);
             // 
             // btnDot
             // 
@@ -241,7 +231,7 @@ namespace Calculator_Requirement
             this.btnDot.FlatAppearance.BorderSize = 0;
             this.btnDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDot.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnDot.Location = new System.Drawing.Point(252, 489);
+            this.btnDot.Location = new System.Drawing.Point(253, 505);
             this.btnDot.Name = "btnDot";
             this.btnDot.Size = new System.Drawing.Size(60, 60);
             this.btnDot.TabIndex = 12;
@@ -256,7 +246,7 @@ namespace Calculator_Requirement
             this.btnNeg.FlatAppearance.BorderSize = 0;
             this.btnNeg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNeg.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnNeg.Location = new System.Drawing.Point(318, 357);
+            this.btnNeg.Location = new System.Drawing.Point(319, 373);
             this.btnNeg.Name = "btnNeg";
             this.btnNeg.Size = new System.Drawing.Size(60, 60);
             this.btnNeg.TabIndex = 13;
@@ -271,7 +261,7 @@ namespace Calculator_Requirement
             this.btnPos.FlatAppearance.BorderSize = 0;
             this.btnPos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPos.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnPos.Location = new System.Drawing.Point(318, 423);
+            this.btnPos.Location = new System.Drawing.Point(319, 439);
             this.btnPos.Name = "btnPos";
             this.btnPos.Size = new System.Drawing.Size(60, 60);
             this.btnPos.TabIndex = 14;
@@ -286,7 +276,7 @@ namespace Calculator_Requirement
             this.btnEq.FlatAppearance.BorderSize = 0;
             this.btnEq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEq.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEq.Location = new System.Drawing.Point(318, 489);
+            this.btnEq.Location = new System.Drawing.Point(319, 505);
             this.btnEq.Name = "btnEq";
             this.btnEq.Size = new System.Drawing.Size(60, 60);
             this.btnEq.TabIndex = 15;
@@ -301,7 +291,7 @@ namespace Calculator_Requirement
             this.btnx.FlatAppearance.BorderSize = 0;
             this.btnx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnx.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnx.Location = new System.Drawing.Point(318, 291);
+            this.btnx.Location = new System.Drawing.Point(319, 307);
             this.btnx.Name = "btnx";
             this.btnx.Size = new System.Drawing.Size(60, 60);
             this.btnx.TabIndex = 16;
@@ -316,13 +306,28 @@ namespace Calculator_Requirement
             this.btnDiv.FlatAppearance.BorderSize = 0;
             this.btnDiv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDiv.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnDiv.Location = new System.Drawing.Point(318, 225);
+            this.btnDiv.Location = new System.Drawing.Point(319, 241);
             this.btnDiv.Name = "btnDiv";
             this.btnDiv.Size = new System.Drawing.Size(60, 60);
             this.btnDiv.TabIndex = 17;
             this.btnDiv.Text = "/";
             this.btnDiv.UseVisualStyleBackColor = false;
             this.btnDiv.Click += new System.EventHandler(this.btnDiv_Click);
+            // 
+            // btnClrPrev
+            // 
+            this.btnClrPrev.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClrPrev.BackColor = System.Drawing.Color.Gray;
+            this.btnClrPrev.FlatAppearance.BorderSize = 0;
+            this.btnClrPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClrPrev.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnClrPrev.Location = new System.Drawing.Point(187, 175);
+            this.btnClrPrev.Name = "btnClrPrev";
+            this.btnClrPrev.Size = new System.Drawing.Size(60, 60);
+            this.btnClrPrev.TabIndex = 18;
+            this.btnClrPrev.Text = "CE";
+            this.btnClrPrev.UseVisualStyleBackColor = false;
+            this.btnClrPrev.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnClrAll
             // 
@@ -331,28 +336,13 @@ namespace Calculator_Requirement
             this.btnClrAll.FlatAppearance.BorderSize = 0;
             this.btnClrAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClrAll.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnClrAll.Location = new System.Drawing.Point(252, 159);
+            this.btnClrAll.Location = new System.Drawing.Point(253, 175);
             this.btnClrAll.Name = "btnClrAll";
             this.btnClrAll.Size = new System.Drawing.Size(60, 60);
-            this.btnClrAll.TabIndex = 18;
-            this.btnClrAll.Text = "CE";
+            this.btnClrAll.TabIndex = 19;
+            this.btnClrAll.Text = "C";
             this.btnClrAll.UseVisualStyleBackColor = false;
-            this.btnClrAll.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnClr
-            // 
-            this.btnClr.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnClr.BackColor = System.Drawing.Color.Gray;
-            this.btnClr.FlatAppearance.BorderSize = 0;
-            this.btnClr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClr.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnClr.Location = new System.Drawing.Point(318, 159);
-            this.btnClr.Name = "btnClr";
-            this.btnClr.Size = new System.Drawing.Size(60, 60);
-            this.btnClr.TabIndex = 19;
-            this.btnClr.Text = "C";
-            this.btnClr.UseVisualStyleBackColor = false;
-            this.btnClr.Click += new System.EventHandler(this.btnClr_Click);
+            this.btnClrAll.Click += new System.EventHandler(this.btnClr_Click);
             // 
             // outptDisp
             // 
@@ -370,22 +360,114 @@ namespace Calculator_Requirement
             this.outptDisp.TabIndex = 20;
             this.outptDisp.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // btnPosNeg
+            // 
+            this.btnPosNeg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPosNeg.BackColor = System.Drawing.Color.Gray;
+            this.btnPosNeg.FlatAppearance.BorderSize = 0;
+            this.btnPosNeg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPosNeg.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnPosNeg.Location = new System.Drawing.Point(121, 505);
+            this.btnPosNeg.Name = "btnPosNeg";
+            this.btnPosNeg.Size = new System.Drawing.Size(60, 60);
+            this.btnPosNeg.TabIndex = 21;
+            this.btnPosNeg.Text = "+/-";
+            this.btnPosNeg.UseVisualStyleBackColor = false;
+            this.btnPosNeg.Click += new System.EventHandler(this.btnPosNeg_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDel.BackColor = System.Drawing.Color.Gray;
+            this.btnDel.FlatAppearance.BorderSize = 0;
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnDel.Location = new System.Drawing.Point(319, 175);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(60, 60);
+            this.btnDel.TabIndex = 22;
+            this.btnDel.Text = "<x";
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnSquareRt
+            // 
+            this.btnSquareRt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSquareRt.BackColor = System.Drawing.Color.Gray;
+            this.btnSquareRt.FlatAppearance.BorderSize = 0;
+            this.btnSquareRt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSquareRt.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSquareRt.Location = new System.Drawing.Point(253, 241);
+            this.btnSquareRt.Name = "btnSquareRt";
+            this.btnSquareRt.Size = new System.Drawing.Size(60, 60);
+            this.btnSquareRt.TabIndex = 23;
+            this.btnSquareRt.Text = "sqrt(x)";
+            this.btnSquareRt.UseVisualStyleBackColor = false;
+            this.btnSquareRt.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnSquared
+            // 
+            this.btnSquared.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSquared.BackColor = System.Drawing.Color.Gray;
+            this.btnSquared.FlatAppearance.BorderSize = 0;
+            this.btnSquared.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSquared.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSquared.Location = new System.Drawing.Point(187, 241);
+            this.btnSquared.Name = "btnSquared";
+            this.btnSquared.Size = new System.Drawing.Size(60, 60);
+            this.btnSquared.TabIndex = 24;
+            this.btnSquared.Text = "x^2";
+            this.btnSquared.UseVisualStyleBackColor = false;
+            // 
+            // btnFraction
+            // 
+            this.btnFraction.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnFraction.BackColor = System.Drawing.Color.Gray;
+            this.btnFraction.FlatAppearance.BorderSize = 0;
+            this.btnFraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFraction.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnFraction.Location = new System.Drawing.Point(121, 241);
+            this.btnFraction.Name = "btnFraction";
+            this.btnFraction.Size = new System.Drawing.Size(60, 60);
+            this.btnFraction.TabIndex = 25;
+            this.btnFraction.Text = "1/x";
+            this.btnFraction.UseVisualStyleBackColor = false;
+            // 
+            // btnPercent
+            // 
+            this.btnPercent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPercent.BackColor = System.Drawing.Color.Gray;
+            this.btnPercent.FlatAppearance.BorderSize = 0;
+            this.btnPercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPercent.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnPercent.Location = new System.Drawing.Point(121, 175);
+            this.btnPercent.Name = "btnPercent";
+            this.btnPercent.Size = new System.Drawing.Size(60, 60);
+            this.btnPercent.TabIndex = 26;
+            this.btnPercent.Text = "%";
+            this.btnPercent.UseVisualStyleBackColor = false;
+            // 
             // calcDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(484, 611);
+            this.Controls.Add(this.btnPercent);
+            this.Controls.Add(this.btnFraction);
+            this.Controls.Add(this.btnSquared);
+            this.Controls.Add(this.btnSquareRt);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnPosNeg);
             this.Controls.Add(this.outptDisp);
-            this.Controls.Add(this.btnClr);
             this.Controls.Add(this.btnClrAll);
+            this.Controls.Add(this.btnClrPrev);
             this.Controls.Add(this.btnDiv);
             this.Controls.Add(this.btnx);
             this.Controls.Add(this.btnEq);
             this.Controls.Add(this.btnPos);
             this.Controls.Add(this.btnNeg);
             this.Controls.Add(this.btnDot);
-            this.Controls.Add(this.btnPosNeg);
             this.Controls.Add(this.btn0);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btn3);
@@ -421,16 +503,21 @@ namespace Calculator_Requirement
         private System.Windows.Forms.Button btn3;
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn0;
-        private System.Windows.Forms.Button btnPosNeg;
         private System.Windows.Forms.Button btnDot;
         private System.Windows.Forms.Button btnNeg;
         private System.Windows.Forms.Button btnPos;
         private System.Windows.Forms.Button btnEq;
         private System.Windows.Forms.Button btnx;
         private System.Windows.Forms.Button btnDiv;
+        private System.Windows.Forms.Button btnClrPrev;
         private System.Windows.Forms.Button btnClrAll;
-        private System.Windows.Forms.Button btnClr;
         private System.Windows.Forms.TextBox outptDisp;
+        private System.Windows.Forms.Button btnPosNeg;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnSquareRt;
+        private System.Windows.Forms.Button btnSquared;
+        private System.Windows.Forms.Button btnFraction;
+        private System.Windows.Forms.Button btnPercent;
     }
 }
 
