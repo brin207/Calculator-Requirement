@@ -25,7 +25,7 @@ namespace Calculator_Requirement
             if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
             {
 
-                outptPreview.Text = outptPreview.Text + "2";
+                outptPreview.Text = "2";
             }
         }
 
@@ -41,7 +41,7 @@ namespace Calculator_Requirement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            outptPreview.Text = "";
+            outptPreview.Text = "0";
         }
 
         private void calcDesign_Load(object sender, EventArgs e)
@@ -59,14 +59,25 @@ namespace Calculator_Requirement
 
             if ((outptPreview.Text == "0") || (outptPreview.Text == "")){
 
+                outptPreview.Text = "1";
+            }
+            else
+            {
+
                 outptPreview.Text = outptPreview.Text + "1";
             }
         }
+    
 
         private void btn3_Click(object sender, EventArgs e)
         {
 
             if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            {
+
+                outptPreview.Text = "3";
+            }
+            else
             {
 
                 outptPreview.Text = outptPreview.Text + "3";
@@ -79,6 +90,12 @@ namespace Calculator_Requirement
             if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
             {
 
+                outptPreview.Text = "4";
+
+            }
+            else
+            {
+
                 outptPreview.Text = outptPreview.Text + "4";
             }
         }
@@ -87,6 +104,11 @@ namespace Calculator_Requirement
         {
 
             if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            {
+
+                outptPreview.Text = "5";
+            }
+            else
             {
 
                 outptPreview.Text = outptPreview.Text + "5";
@@ -99,6 +121,11 @@ namespace Calculator_Requirement
             if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
             {
 
+                outptPreview.Text = "6";
+            }
+            else
+            {
+
                 outptPreview.Text = outptPreview.Text + "6";
             }
         }
@@ -107,6 +134,11 @@ namespace Calculator_Requirement
         {
 
             if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            {
+
+                outptPreview.Text = "7";
+            }
+            else
             {
 
                 outptPreview.Text = outptPreview.Text + "7";
@@ -119,6 +151,11 @@ namespace Calculator_Requirement
             if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
             {
 
+                outptPreview.Text = "8";
+            }
+            else
+            {
+
                 outptPreview.Text = outptPreview.Text + "8";
             }
         }
@@ -129,6 +166,11 @@ namespace Calculator_Requirement
             if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
             {
 
+                outptPreview.Text = "9";
+            }
+            else
+            {
+
                 outptPreview.Text = outptPreview.Text + "9";
             }
         }
@@ -137,6 +179,11 @@ namespace Calculator_Requirement
         {
 
             if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            {
+
+                outptPreview.Text = "0";
+            }
+            else
             {
 
                 outptPreview.Text = outptPreview.Text + "0";
@@ -158,8 +205,6 @@ namespace Calculator_Requirement
             
             outptDisp.AppendText("+" + outptPreview.Text);
             outptPreview.Text = "";
-            
-
         }
 
         private void btnNeg_Click(object sender, EventArgs e)
@@ -182,7 +227,9 @@ namespace Calculator_Requirement
 
         private void btnClr_Click(object sender, EventArgs e)
         {
-            outptPreview.Text = outptPreview.Text.Remove(outptPreview.Text.Length - 1, 1);
+
+            outptDisp.Text = "";
+            outptPreview.Text = "0";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -192,7 +239,7 @@ namespace Calculator_Requirement
 
         private void btnPosNeg_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -202,7 +249,24 @@ namespace Calculator_Requirement
 
         private void btnDel_Click(object sender, EventArgs e)
         {
+            if (outptPreview.Text == "0")
+            {
 
+                //None
+            }
+            else
+            {
+                if (outptPreview.Text.Length == 1)
+                {
+
+                    outptPreview.Text = "0";
+                }
+                else
+                {
+
+                    outptPreview.Text = outptPreview.Text.Remove(outptPreview.Text.Length - 1, 1);
+                }
+            }
         }
     }
 }

@@ -72,6 +72,7 @@ namespace Calculator_Requirement
             this.outptPreview.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.outptPreview.Size = new System.Drawing.Size(461, 56);
             this.outptPreview.TabIndex = 0;
+            this.outptPreview.Text = "0";
             this.outptPreview.TextChanged += new System.EventHandler(this.outptPreview_TextChanged);
             // 
             // btn7
