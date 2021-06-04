@@ -18,7 +18,11 @@ namespace Calculator_Requirement
             InitializeComponent();
         }
 
+        static class Global
+        {
 
+            public static double output = 0;
+        }
         private void button6_Click(object sender, EventArgs e)
         {
 
@@ -203,26 +207,79 @@ namespace Calculator_Requirement
         private void btnPos_Click(object sender, EventArgs e)
         {
             
-            outptDisp.AppendText("+" + outptPreview.Text);
-            outptPreview.Text = "";
+            Global.output = Double.Parse(outptPreview.Text) + Global.output;
+
+            if (outptDisp.Text == "0" || outptDisp.Text == "")
+            {
+
+                outptDisp.AppendText("+" + Global.output.ToString());
+            }
+            else
+            {
+
+                outptDisp.Text = "";
+                outptDisp.AppendText("+" + Global.output.ToString());
+            }
+
+            outptPreview.Text = "0";
         }
 
         private void btnNeg_Click(object sender, EventArgs e)
         {
-            outptDisp.AppendText("-" + outptPreview.Text);
-            outptPreview.Text = "";
+            Global.output = Double.Parse(outptPreview.Text) - Global.output;
+
+            if (outptDisp.Text == "0" || outptDisp.Text == "")
+            {
+
+                outptDisp.AppendText("-" + Global.output.ToString());
+            }
+            else
+            {
+
+                outptDisp.Text = "";
+                outptDisp.AppendText("-" + Global.output.ToString());
+            }
+
+            outptPreview.Text = "0";
         }
+    
 
         private void btnx_Click(object sender, EventArgs e)
         {
-            outptDisp.AppendText("*" + outptPreview.Text);
-            outptPreview.Text = "";
+
+            if (outptDisp.Text == "0" || outptDisp.Text == "")
+            {
+
+                outptDisp.AppendText("*" + Global.output.ToString());
+            }
+            else
+            {
+
+                outptDisp.Text = "";
+                outptDisp.AppendText("*" + Global.output.ToString());
+                Global.output = Double.Parse(outptPreview.Text) * Global.output;
+            }
+
+            outptPreview.Text = "0";
         }
 
         private void btnDiv_Click(object sender, EventArgs e)
         {
-            outptDisp.AppendText("/" + outptPreview.Text);
-            outptPreview.Text = "";
+
+            if (outptDisp.Text == "0" || outptDisp.Text == "")
+            {
+
+                outptDisp.AppendText("/" + Global.output.ToString());
+            }
+            else
+            {
+
+                outptDisp.Text = "";
+                outptDisp.AppendText("/" + Global.output.ToString());
+                Global.output = Double.Parse(outptPreview.Text) / Global.output;
+            }
+
+            outptPreview.Text = "0";
         }
 
         private void btnClr_Click(object sender, EventArgs e)
@@ -230,6 +287,7 @@ namespace Calculator_Requirement
 
             outptDisp.Text = "";
             outptPreview.Text = "0";
+            Global.output = 0;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
