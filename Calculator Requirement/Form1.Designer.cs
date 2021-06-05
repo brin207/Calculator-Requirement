@@ -69,6 +69,7 @@ namespace Calculator_Requirement
             this.outptPreview.ForeColor = System.Drawing.SystemColors.Window;
             this.outptPreview.Location = new System.Drawing.Point(11, 74);
             this.outptPreview.Name = "outptPreview";
+            this.outptPreview.ReadOnly = true;
             this.outptPreview.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.outptPreview.Size = new System.Drawing.Size(461, 56);
             this.outptPreview.TabIndex = 0;
@@ -356,6 +357,7 @@ namespace Calculator_Requirement
             this.outptDisp.ForeColor = System.Drawing.SystemColors.Window;
             this.outptDisp.Location = new System.Drawing.Point(12, 34);
             this.outptDisp.Name = "outptDisp";
+            this.outptDisp.ReadOnly = true;
             this.outptDisp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.outptDisp.Size = new System.Drawing.Size(461, 34);
             this.outptDisp.TabIndex = 20;

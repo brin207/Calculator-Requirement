@@ -250,14 +250,15 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                outptDisp.AppendText("*" + Global.output.ToString());
+                outptDisp.AppendText("*" + outptPreview.Text);
+                Global.output = Double.Parse(outptPreview.Text);
             }
             else
             {
 
+                Global.output = Global.output * Double.Parse(outptPreview.Text);
                 outptDisp.Text = "";
                 outptDisp.AppendText("*" + Global.output.ToString());
-                Global.output = Double.Parse(outptPreview.Text) * Global.output;
             }
 
             outptPreview.Text = "0";
@@ -269,14 +270,15 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                outptDisp.AppendText("/" + Global.output.ToString());
+                outptDisp.AppendText("/" + outptPreview.Text);
+                Global.output = Double.Parse(outptPreview.Text);
             }
             else
             {
 
+                Global.output = Global.output / Double.Parse(outptPreview.Text);
                 outptDisp.Text = "";
                 outptDisp.AppendText("/" + Global.output.ToString());
-                Global.output = Double.Parse(outptPreview.Text) / Global.output;
             }
 
             outptPreview.Text = "0";
@@ -298,6 +300,20 @@ namespace Calculator_Requirement
         private void btnPosNeg_Click(object sender, EventArgs e)
         {
 
+            if (outptPreview.Text == "0" || outptPreview.Text == ""){
+
+                //none
+            }
+            else if (Double.Parse(outptPreview.Text) > 0)
+            {
+
+                outptPreview.Text = "-" + outptPreview.Text;
+            }
+            else if (Double.Parse(outptPreview.Text) < 0)
+            {
+                double converted = Double.Parse(outptPreview.Text) * -1;
+                outptPreview.Text = converted.ToString();
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
