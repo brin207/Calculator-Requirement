@@ -22,6 +22,7 @@ namespace Calculator_Requirement
         {
 
             public static double output = 0;
+            public static string op = "";
         }
         private void button6_Click(object sender, EventArgs e)
         {
@@ -45,7 +46,19 @@ namespace Calculator_Requirement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            outptPreview.Text = "0";
+
+            if (outptPreview.Text == "Cannot divide by zero")
+            {
+
+                outptDisp.Text = "";
+                outptPreview.Text = "0";
+                Global.output = 0;
+            }
+            else
+            {
+
+                outptPreview.Text = "0";
+            }
         }
 
         private void calcDesign_Load(object sender, EventArgs e)
@@ -222,6 +235,7 @@ namespace Calculator_Requirement
             }
 
             outptPreview.Text = "0";
+            Global.op = "+";
         }
 
         private void btnNeg_Click(object sender, EventArgs e)
@@ -241,6 +255,7 @@ namespace Calculator_Requirement
             }
 
             outptPreview.Text = "0";
+            Global.op = "-";
         }
     
 
@@ -262,6 +277,7 @@ namespace Calculator_Requirement
             }
 
             outptPreview.Text = "0";
+            Global.op = "*";
         }
 
         private void btnDiv_Click(object sender, EventArgs e)
@@ -276,12 +292,23 @@ namespace Calculator_Requirement
             else
             {
 
-                Global.output = Global.output / Double.Parse(outptPreview.Text);
-                outptDisp.Text = "";
-                outptDisp.AppendText("/" + Global.output.ToString());
+                if (outptPreview.Text == "0")
+                {
+
+                    outptPreview.Text = "Cannot divide by zero";
+                    btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = false;
+                }
+                else
+                {
+
+                    Global.output = Global.output / Double.Parse(outptPreview.Text);
+                    outptDisp.Text = "";
+                    outptDisp.AppendText("/" + Global.output.ToString());
+                }
             }
 
             outptPreview.Text = "0";
+            Global.op = "/";
         }
 
         private void btnClr_Click(object sender, EventArgs e)
@@ -307,7 +334,7 @@ namespace Calculator_Requirement
             else if (Double.Parse(outptPreview.Text) > 0)
             {
 
-                outptPreview.Text = "-" + outptPreview.Text;
+                outptPreview.Text = outptPreview.Text + "-";
             }
             else if (Double.Parse(outptPreview.Text) < 0)
             {
@@ -327,6 +354,13 @@ namespace Calculator_Requirement
             {
 
                 //None
+            }
+            else if (outptPreview.Text == "Cannot divide by zero")
+            {
+
+                outptDisp.Text = "";
+                outptPreview.Text = "0";
+                Global.output = 0;
             }
             else
             {
