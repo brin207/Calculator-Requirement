@@ -22,6 +22,7 @@ namespace Calculator_Requirement
         {
 
             public static double output = 0;
+            public static double firstVal = 0;
             public static string op = "";
         }
         private void button6_Click(object sender, EventArgs e)
@@ -302,7 +303,7 @@ namespace Calculator_Requirement
         private void btnEq_Click(object sender, EventArgs e)
         {
 
-            switch (Global.op)
+            /*switch (Global.op)
             {
 
                 case "+":
@@ -330,8 +331,39 @@ namespace Calculator_Requirement
                 default:
                     break;
             }
-            outptDisp.Text = "=" + outptPreview.Text + outptDisp.Text;
-            outptPreview.Text = Global.output.ToString();
+            if (outptDisp.Text.Contains("="))
+            {
+
+                outptDisp.Text = "";
+                outptDisp.Text = "=" + outptPreview.Text + "+" + Global.output.ToString();
+            }
+            else
+            {
+
+                outptDisp.Text = "=" + outptPreview.Text + outptDisp.Text;
+            }
+            outptPreview.Text = Global.output.ToString();*/
+
+            if (Global.op == "+")
+            {
+
+                if ()
+            }
+            else if (Global.op == "-")
+            {
+
+
+            }
+            else if (Global.op == "*")
+            {
+
+
+            }
+            else if (Global.op == "/")
+            {
+
+
+            }
         }
 
         private void btnPos_Click(object sender, EventArgs e)
