@@ -24,6 +24,7 @@ namespace Calculator_Requirement
             public static double output = 0;
             public static double firstVal = 0;
             public static string op = "";
+
         }
         private void button6_Click(object sender, EventArgs e)
         {
@@ -303,66 +304,80 @@ namespace Calculator_Requirement
         private void btnEq_Click(object sender, EventArgs e)
         {
 
-            /*switch (Global.op)
+            if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                case "+":
-                    Global.output = Global.output + Double.Parse(outptPreview.Text);
-                    break;
-                case "-":
-                    Global.output = Global.output - Double.Parse(outptPreview.Text);
-                    break;
-                case "*":
-                    Global.output = Global.output * Double.Parse(outptPreview.Text);
-                    break;
-                case "/":
-                    if (outptPreview.Text == "0")
-                    {
-
-                        outptPreview.Text = "Cannot divide by zero";
-                        btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = false;
-                    }
-                    else
-                    {
-
-                        Global.output = Global.output / Double.Parse(outptPreview.Text);
-                    }
-                    break;
-                default:
-                    break;
+                outptDisp.Text = "=" + outptPreview.Text;
             }
-            if (outptDisp.Text.Contains("="))
+            else if (outptDisp.Text.Contains("="))
             {
 
-                outptDisp.Text = "";
-                outptDisp.Text = "=" + outptPreview.Text + "+" + Global.output.ToString();
+                if (outptDisp.Text.Contains("+"))
+                {
+
+                    string[] vars = outptDisp.Text.Split('+', '=');
+                    Global.firstVal = vars[1];
+                    Global.output = Global.output + Double.Parse(vars[1]);
+                    outptDisp.Text = "=" + outptPreview.Text + "+" + vars[1];
+                }
+                else if (outptDisp.Text.Contains("-"))
+                {
+
+                    string[] vars = outptDisp.Text.Split('-', '=');
+                    Global.output = Global.output - Double.Parse(vars[1]);
+                    outptDisp.Text = "=" + outptPreview.Text + "-" + vars[1];
+                }
+                else if (outptDisp.Text.Contains("*"))
+                {
+
+                    string[] vars = outptDisp.Text.Split('*', '=');
+                    Global.output = Global.output * Double.Parse(vars[1]);
+                    outptDisp.Text = "=" + outptPreview.Text + "*" + vars[1];
+                }
+                else if (outptDisp.Text.Contains("/"))
+                {
+
+                    string[] vars = outptDisp.Text.Split('/', '=');
+                    Global.output = Global.output / Double.Parse(vars[1]);
+                    outptDisp.Text = "=" + outptPreview.Text + "/" + vars[1];
+                }
+
+                outptPreview.Text = Global.output.ToString();
             }
             else
             {
 
                 outptDisp.Text = "=" + outptPreview.Text + outptDisp.Text;
-            }
-            outptPreview.Text = Global.output.ToString();*/
+                switch (Global.op)
+                {
 
-            if (Global.op == "+")
-            {
+                    case "+":
+                        Global.output = Global.output + Double.Parse(outptPreview.Text);
+                        break;
+                    case "-":
+                        Global.output = Global.output - Double.Parse(outptPreview.Text);
+                        break;
+                    case "*":
+                        Global.output = Global.output * Double.Parse(outptPreview.Text);
+                        break;
+                    case "/":
+                        if (outptPreview.Text == "0")
+                        {
 
-                if ()
-            }
-            else if (Global.op == "-")
-            {
+                            outptPreview.Text = "Cannot divide by zero";
+                            btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = false;
+                        }
+                        else
+                        {
 
+                            Global.output = Global.output / Double.Parse(outptPreview.Text);
+                        }
+                        break;
+                    default:
+                        break;
+                }
 
-            }
-            else if (Global.op == "*")
-            {
-
-
-            }
-            else if (Global.op == "/")
-            {
-
-
+                outptPreview.Text = Global.output.ToString();
             }
         }
 
