@@ -315,8 +315,12 @@ namespace Calculator_Requirement
                 if (outptDisp.Text.Contains("+"))
                 {
 
-                    string[] vars = outptDisp.Text.Split('+', '=');
-                    Global.firstVal = vars[1];
+                    string[] vars = outptDisp.Text.Split('+');
+                    if (vars[1].Contains("="))
+                    {
+                        vars[1] = vars[1].Replace("=", "");
+
+                    }
                     Global.output = Global.output + Double.Parse(vars[1]);
                     outptDisp.Text = "=" + outptPreview.Text + "+" + vars[1];
                 }
@@ -324,6 +328,11 @@ namespace Calculator_Requirement
                 {
 
                     string[] vars = outptDisp.Text.Split('-', '=');
+                    if (vars[1].Contains("="))
+                    {
+                        vars[1] = vars[0].Replace("=", "");
+
+                    }
                     Global.output = Global.output - Double.Parse(vars[1]);
                     outptDisp.Text = "=" + outptPreview.Text + "-" + vars[1];
                 }
@@ -503,15 +512,15 @@ namespace Calculator_Requirement
 
                 //none
             }
-            else if (Double.Parse(outptPreview.Text) > 0)
+            else if (!outptPreview.Text.Contains("-"))
             {
 
                 outptPreview.Text = outptPreview.Text + "-";
             }
-            else if (Double.Parse(outptPreview.Text) < 0)
+            else if (outptPreview.Text.Contains("-"))
             {
-                double converted = Double.Parse(outptPreview.Text) * -1;
-                outptPreview.Text = converted.ToString();
+          
+                outptPreview.Text = outptPreview.Text.Replace("-","");
             }
         }
 
