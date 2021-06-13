@@ -34,7 +34,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "2";
             }
-            else if (outptPreview.Text == "Cannot divide by zero")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
@@ -62,7 +62,7 @@ namespace Calculator_Requirement
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (outptPreview.Text == "Cannot divide by zero")
+            if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
@@ -95,7 +95,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "1";
             }
-            else if (outptPreview.Text == "Cannot divide by zero")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
@@ -119,7 +119,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "3";
             }
-            else if (outptPreview.Text == "Cannot divide by zero")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
@@ -143,7 +143,7 @@ namespace Calculator_Requirement
                 outptPreview.Text = "4";
 
             }
-            else if (outptPreview.Text == "Cannot divide by zero")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
@@ -166,7 +166,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "5";
             }
-            else if (outptPreview.Text == "Cannot divide by zero")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
@@ -189,7 +189,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "6";
             }
-            else if (outptPreview.Text == "Cannot divide by zero")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
@@ -212,7 +212,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "7";
             }
-            else if (outptPreview.Text == "Cannot divide by zero")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
@@ -235,7 +235,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "8";
             }
-            else if (outptPreview.Text == "Cannot divide by zero")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
@@ -258,7 +258,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "9";
             }
-            else if (outptPreview.Text == "Cannot divide by zero")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
@@ -281,7 +281,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "0";
             }
-            else if (outptPreview.Text == "Cannot divide by zero")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
@@ -307,7 +307,7 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                outptDisp.Text = "=" + outptPreview.Text;
+                outptDisp.Text = outptPreview.Text + "=";
             }
             else if (outptDisp.Text.Contains("="))
             {
@@ -315,48 +315,48 @@ namespace Calculator_Requirement
                 if (outptDisp.Text.Contains("+"))
                 {
 
-                    string[] vars = outptDisp.Text.Split('+');
-                    if (vars[1].Contains("="))
-                    {
-                        vars[1] = vars[1].Replace("=", "");
-
-                    }
+                    string[] vars = outptDisp.Text.Split('+', '=');
+   
                     Global.output = Global.output + Double.Parse(vars[1]);
-                    outptDisp.Text = "=" + outptPreview.Text + "+" + vars[1];
+                    outptDisp.Text = outptPreview.Text + "+" + vars[1] + "=";
                 }
                 else if (outptDisp.Text.Contains("-"))
                 {
 
                     string[] vars = outptDisp.Text.Split('-', '=');
-                    if (vars[1].Contains("="))
-                    {
-                        vars[1] = vars[0].Replace("=", "");
-
-                    }
+                    
                     Global.output = Global.output - Double.Parse(vars[1]);
-                    outptDisp.Text = "=" + outptPreview.Text + "-" + vars[1];
+                    outptDisp.Text = outptPreview.Text + "-" + vars[1] + "=";
                 }
                 else if (outptDisp.Text.Contains("*"))
                 {
 
                     string[] vars = outptDisp.Text.Split('*', '=');
                     Global.output = Global.output * Double.Parse(vars[1]);
-                    outptDisp.Text = "=" + outptPreview.Text + "*" + vars[1];
+                    outptDisp.Text = outptPreview.Text + "*" + vars[1] + "=";
                 }
                 else if (outptDisp.Text.Contains("/"))
                 {
 
                     string[] vars = outptDisp.Text.Split('/', '=');
                     Global.output = Global.output / Double.Parse(vars[1]);
-                    outptDisp.Text = "=" + outptPreview.Text + "/" + vars[1];
+                    outptDisp.Text = outptPreview.Text + "/" + vars[1] + "=";
                 }
 
                 outptPreview.Text = Global.output.ToString();
             }
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
+            {
+
+                outptDisp.Text = "";
+                outptPreview.Text = "0";
+                Global.output = 0;
+                btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
+            }
             else
             {
 
-                outptDisp.Text = "=" + outptPreview.Text + outptDisp.Text;
+                outptDisp.Text = outptDisp.Text + outptPreview.Text + "=";
                 switch (Global.op)
                 {
 
@@ -398,7 +398,7 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                outptDisp.AppendText("+" + Global.output.ToString());
+                outptDisp.AppendText(Global.output.ToString() + "+");
             }
             else if ((Global.output.ToString() + Global.op) == outptDisp.Text)
             {
@@ -409,7 +409,7 @@ namespace Calculator_Requirement
             {
 
                 outptDisp.Text = "";
-                outptDisp.AppendText("+" + Global.output.ToString());
+                outptDisp.AppendText(Global.output.ToString() + "+");
             }
 
             outptPreview.Text = "0";
@@ -423,13 +423,13 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                outptDisp.AppendText("-" + Global.output.ToString());
+                outptDisp.AppendText(Global.output.ToString() + "-");
             }
             else
             {
 
                 outptDisp.Text = "";
-                outptDisp.AppendText("-" + Global.output.ToString());
+                outptDisp.AppendText(Global.output.ToString() + "-");
             }
 
             outptPreview.Text = "0";
@@ -443,7 +443,7 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                outptDisp.AppendText("*" + outptPreview.Text);
+                outptDisp.AppendText(Global.output.ToString() + "*");
                 Global.output = Double.Parse(outptPreview.Text);
             }
             else
@@ -451,7 +451,7 @@ namespace Calculator_Requirement
 
                 Global.output = Global.output * Double.Parse(outptPreview.Text);
                 outptDisp.Text = "";
-                outptDisp.AppendText("*" + Global.output.ToString());
+                outptDisp.AppendText(Global.output.ToString() + "*");
             }
 
             outptPreview.Text = "0";
@@ -464,7 +464,7 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                outptDisp.AppendText("/" + outptPreview.Text);
+                outptDisp.AppendText(Global.output.ToString() + "/");
                 Global.output = Double.Parse(outptPreview.Text);
                 outptPreview.Text = "0";
                 Global.op = "/";
@@ -483,7 +483,7 @@ namespace Calculator_Requirement
 
                     Global.output = Global.output / Double.Parse(outptPreview.Text);
                     outptDisp.Text = "";
-                    outptDisp.AppendText("/" + Global.output.ToString());
+                    outptDisp.AppendText(Global.output.ToString() + "/");
                     outptPreview.Text = "0";
                     Global.op = "/";
                 }
@@ -512,21 +512,28 @@ namespace Calculator_Requirement
 
                 //none
             }
-            else if (!outptPreview.Text.Contains("-"))
+            else
             {
-
-                outptPreview.Text = outptPreview.Text + "-";
-            }
-            else if (outptPreview.Text.Contains("-"))
-            {
-          
-                outptPreview.Text = outptPreview.Text.Replace("-","");
+                double convert = Double.Parse(outptPreview.Text) * -1;
+                outptPreview.Text = convert.ToString();
             }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            if (Double.Parse(outptPreview.Text) < 0)
+            {
 
+                outptDisp.Text = $"sqrt({outptPreview.Text})";
+                outptPreview.Text = "Invalid Input";
+                btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = false;
+            }
+            else
+            {
+
+                outptDisp.Text = $"sqrt({outptPreview.Text})";
+                outptPreview.Text = Math.Sqrt(Double.Parse(outptPreview.Text)).ToString();
+            }
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -536,7 +543,7 @@ namespace Calculator_Requirement
 
                 //None
             }
-            else if (outptPreview.Text == "Cannot divide by zero")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
@@ -557,6 +564,14 @@ namespace Calculator_Requirement
                     outptPreview.Text = outptPreview.Text.Remove(outptPreview.Text.Length - 1, 1);
                 }
             }
+        }
+
+        private void btnSquared_Click(object sender, EventArgs e)
+        {
+
+            outptDisp.Text = $"{outptPreview.Text}^2";
+            double converted = Double.Parse(outptPreview.Text) * Double.Parse(outptPreview.Text);
+            outptPreview.Text = converted.ToString();
         }
     }
 }

@@ -70,10 +70,10 @@ namespace Calculator_Requirement
             this.outptPreview.Location = new System.Drawing.Point(11, 74);
             this.outptPreview.Name = "outptPreview";
             this.outptPreview.ReadOnly = true;
-            this.outptPreview.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.outptPreview.Size = new System.Drawing.Size(461, 56);
             this.outptPreview.TabIndex = 0;
             this.outptPreview.Text = "0";
+            this.outptPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.outptPreview.TextChanged += new System.EventHandler(this.outptPreview_TextChanged);
             // 
             // btn7
@@ -358,9 +358,9 @@ namespace Calculator_Requirement
             this.outptDisp.Location = new System.Drawing.Point(12, 34);
             this.outptDisp.Name = "outptDisp";
             this.outptDisp.ReadOnly = true;
-            this.outptDisp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.outptDisp.Size = new System.Drawing.Size(461, 34);
             this.outptDisp.TabIndex = 20;
+            this.outptDisp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.outptDisp.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnPosNeg
@@ -421,6 +421,7 @@ namespace Calculator_Requirement
             this.btnSquared.TabIndex = 24;
             this.btnSquared.Text = "x^2";
             this.btnSquared.UseVisualStyleBackColor = false;
+            this.btnSquared.Click += new System.EventHandler(this.btnSquared_Click);
             // 
             // btnFraction
             // 
