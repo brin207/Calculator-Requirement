@@ -318,7 +318,7 @@ namespace Calculator_Requirement
                     string[] vars = outptDisp.Text.Split('+');
                     if (vars[1].Contains("="))
                     {
-                        vars[1] = vars[0].Replace("=", "");
+                        vars[1] = vars[1].Replace("=", "");
 
                     }
                     Global.output = Global.output + Double.Parse(vars[1]);
@@ -330,7 +330,7 @@ namespace Calculator_Requirement
                     string[] vars = outptDisp.Text.Split('-', '=');
                     if (vars[1].Contains("="))
                     {
-                        vars[1] = vars[1].Replace("=", "");
+                        vars[1] = vars[0].Replace("=", "");
 
                     }
                     Global.output = Global.output - Double.Parse(vars[1]);
@@ -340,11 +340,6 @@ namespace Calculator_Requirement
                 {
 
                     string[] vars = outptDisp.Text.Split('*', '=');
-                    if (vars[1].Contains("="))
-                    {
-                        vars[1] = vars[1].Replace("=", "");
-
-                    }
                     Global.output = Global.output * Double.Parse(vars[1]);
                     outptDisp.Text = "=" + outptPreview.Text + "*" + vars[1];
                 }
@@ -352,11 +347,6 @@ namespace Calculator_Requirement
                 {
 
                     string[] vars = outptDisp.Text.Split('/', '=');
-                    if (vars[1].Contains("="))
-                    {
-                        vars[1] = vars[1].Replace("=", "");
-
-                    }
                     Global.output = Global.output / Double.Parse(vars[1]);
                     outptDisp.Text = "=" + outptPreview.Text + "/" + vars[1];
                 }
@@ -428,17 +418,12 @@ namespace Calculator_Requirement
 
         private void btnNeg_Click(object sender, EventArgs e)
         {
-            Global.output = Double.Parse(outptPreview.Text) - Global.output;
+            Global.output = Global.output - Double.Parse(outptPreview.Text);
 
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
                 outptDisp.AppendText("-" + Global.output.ToString());
-            }
-            else if ((Global.output.ToString() + Global.op) == outptDisp.Text)
-            {
-
-                //None
             }
             else
             {
@@ -460,11 +445,6 @@ namespace Calculator_Requirement
 
                 outptDisp.AppendText("*" + outptPreview.Text);
                 Global.output = Double.Parse(outptPreview.Text);
-            }
-            else if ((Global.output.ToString() + Global.op) == outptDisp.Text)
-            {
-
-                //None
             }
             else
             {
@@ -488,11 +468,6 @@ namespace Calculator_Requirement
                 Global.output = Double.Parse(outptPreview.Text);
                 outptPreview.Text = "0";
                 Global.op = "/";
-            }
-            else if ((Global.output.ToString() + Global.op) == outptDisp.Text)
-            {
-
-                //None
             }
             else
             {
@@ -537,13 +512,16 @@ namespace Calculator_Requirement
 
                 //none
             }
-            else //if (!outptPreview.Text.Contains("-"))
+            else if (!outptPreview.Text.Contains("-"))
             {
 
-                double convert = Double.Parse(outptPreview.Text) * -1;
-                outptPreview.Text = convert.ToString();
+                outptPreview.Text = outptPreview.Text + "-";
             }
-            
+            else if (outptPreview.Text.Contains("-"))
+            {
+          
+                outptPreview.Text = outptPreview.Text.Replace("-","");
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
