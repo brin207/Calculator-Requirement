@@ -70,10 +70,10 @@ namespace Calculator_Requirement
             this.outptPreview.Location = new System.Drawing.Point(11, 74);
             this.outptPreview.Name = "outptPreview";
             this.outptPreview.ReadOnly = true;
-            this.outptPreview.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.outptPreview.Size = new System.Drawing.Size(461, 56);
             this.outptPreview.TabIndex = 0;
             this.outptPreview.Text = "0";
+            this.outptPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.outptPreview.TextChanged += new System.EventHandler(this.outptPreview_TextChanged);
             // 
             // btn7
