@@ -309,6 +309,42 @@ namespace Calculator_Requirement
 
                 outptDisp.Text = outptPreview.Text + "=";
             }
+            else if (outptDisp.Text == (Global.output.ToString() + Global.op + outptPreview.Text))
+            {
+
+                outptDisp.AppendText("=");
+                switch (Global.op)
+                {
+
+                    case "+":
+                        Global.output = Global.output + Double.Parse(outptPreview.Text);
+                        break;
+                    case "-":
+                        Global.output = Global.output - Double.Parse(outptPreview.Text);
+                        break;
+                    case "*":
+                        Global.output = Global.output * Double.Parse(outptPreview.Text);
+                        break;
+                    case "/":
+                        if (outptPreview.Text == "0")
+                        {
+
+                            outptPreview.Text = "Cannot divide by zero";
+                            btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = false;
+                        }
+                        else
+                        {
+
+                            Global.output = Global.output / Double.Parse(outptPreview.Text);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                outptPreview.Text = Global.output.ToString();
+
+            }
             else if (outptDisp.Text.Contains("="))
             {
 
