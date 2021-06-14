@@ -489,6 +489,7 @@ namespace Calculator_Requirement
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "calcDesign";
             this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.calcDesign_Load);
             this.ResumeLayout(false);
