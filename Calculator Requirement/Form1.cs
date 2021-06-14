@@ -400,10 +400,11 @@ namespace Calculator_Requirement
 
                 outptDisp.AppendText(Global.output.ToString() + "+");
             }
-            else if ((Global.output.ToString() + Global.op) == outptDisp.Text)
+            else if (outptDisp.Text.Contains("="))
             {
 
-                //None
+                outptDisp.Text = outptPreview.Text + "+";
+                Global.output = Double.Parse(outptPreview.Text);
             }
             else
             {
@@ -418,16 +419,23 @@ namespace Calculator_Requirement
 
         private void btnNeg_Click(object sender, EventArgs e)
         {
-            Global.output = Global.output - Double.Parse(outptPreview.Text);
 
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
+                Global.output = Double.Parse(outptPreview.Text);
                 outptDisp.AppendText(Global.output.ToString() + "-");
+            }
+            else if (outptDisp.Text.Contains("="))
+            {
+
+                outptDisp.Text = outptPreview.Text + "-";
+                Global.output = Double.Parse(outptPreview.Text);
             }
             else
             {
 
+                Global.output = Global.output - Double.Parse(outptPreview.Text);
                 outptDisp.Text = "";
                 outptDisp.AppendText(Global.output.ToString() + "-");
             }
@@ -443,13 +451,19 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
+                Global.output = Double.Parse(outptPreview.Text);
                 outptDisp.AppendText(Global.output.ToString() + "*");
+            }
+            else if (outptDisp.Text.Contains("="))
+            {
+
+                outptDisp.Text = outptPreview.Text + "*";
                 Global.output = Double.Parse(outptPreview.Text);
             }
             else
             {
 
-                Global.output = Global.output * Double.Parse(outptPreview.Text);
+                Global.output = Double.Parse(outptPreview.Text) * Global.output;
                 outptDisp.Text = "";
                 outptDisp.AppendText(Global.output.ToString() + "*");
             }
@@ -464,10 +478,16 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                outptDisp.AppendText(Global.output.ToString() + "/");
                 Global.output = Double.Parse(outptPreview.Text);
+                outptDisp.AppendText(Global.output.ToString() + "/");
                 outptPreview.Text = "0";
                 Global.op = "/";
+            }
+            else if (outptDisp.Text.Contains("="))
+            {
+
+                outptDisp.Text = outptPreview.Text + "/";
+                Global.output = Double.Parse(outptPreview.Text);
             }
             else
             {
@@ -572,6 +592,37 @@ namespace Calculator_Requirement
             outptDisp.Text = $"{outptPreview.Text}^2";
             double converted = Double.Parse(outptPreview.Text) * Double.Parse(outptPreview.Text);
             outptPreview.Text = converted.ToString();
+        }
+
+        private void btnFraction_Click(object sender, EventArgs e)
+        {
+
+            if (Double.Parse(outptPreview.Text) == 0)
+            {
+
+                outptDisp.Text = $"1/({outptPreview.Text})";
+                outptPreview.Text = "Cannot divide by zero";
+                btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = false;
+            }
+            else
+            {
+
+                outptDisp.Text = $"1/({outptPreview.Text})";
+                double converted = 1/Double.Parse(outptPreview.Text);
+                outptPreview.Text = converted.ToString();
+            }
+        }
+
+        private void btnPercent_Click(object sender, EventArgs e)
+        {
+
+        if ((Global.output.ToString() + Global.op) == outptDisp.Text)
+            {
+
+                double convert = Double.Parse(outptPreview.Text) / 100;
+                outptDisp.Text = Global.output.ToString() + Global.op + convert.ToString();
+                outptPreview.Text = convert.ToString();
+            }         
         }
     }
 }

@@ -436,6 +436,7 @@ namespace Calculator_Requirement
             this.btnFraction.TabIndex = 25;
             this.btnFraction.Text = "1/x";
             this.btnFraction.UseVisualStyleBackColor = false;
+            this.btnFraction.Click += new System.EventHandler(this.btnFraction_Click);
             // 
             // btnPercent
             // 
@@ -450,6 +451,7 @@ namespace Calculator_Requirement
             this.btnPercent.TabIndex = 26;
             this.btnPercent.Text = "%";
             this.btnPercent.UseVisualStyleBackColor = false;
+            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
             // 
             // calcDesign
             // 
