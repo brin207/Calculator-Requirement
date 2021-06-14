@@ -356,13 +356,23 @@ namespace Calculator_Requirement
                     Global.output = Global.output + Double.Parse(vars[1]);
                     outptDisp.Text = outptPreview.Text + "+" + vars[1] + "=";
                 }
-                else if (outptDisp.Text.Contains("-"))
+                else if (Global.op == "-")
                 {
 
                     string[] vars = outptDisp.Text.Split('-', '=');
-                    
-                    Global.output = Global.output - Double.Parse(vars[1]);
-                    outptDisp.Text = outptPreview.Text + "-" + vars[1] + "=";
+
+                    if (vars[0] == "")
+                    {
+
+                        Global.output = Global.output - Double.Parse(vars[2]);
+                        outptDisp.Text = outptPreview.Text + "-" + vars[2] + "=";
+                    }
+                    else
+                    {
+
+                        Global.output = Global.output - Double.Parse(vars[1]);
+                        outptDisp.Text = outptPreview.Text + "-" + vars[1] + "=";
+                    }
                 }
                 else if (outptDisp.Text.Contains("*"))
                 {
