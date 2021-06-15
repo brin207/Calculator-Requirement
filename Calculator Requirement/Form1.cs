@@ -24,7 +24,7 @@ namespace Calculator_Requirement
             public static double output = 0;
             public static double firstVal = 0;
             public static string op = "";
-
+            public static double memVal = 0;
         }
         private void button6_Click(object sender, EventArgs e)
         {
@@ -670,6 +670,40 @@ namespace Calculator_Requirement
                 outptDisp.Text = Global.output.ToString() + Global.op + Global.firstVal.ToString();
                 outptPreview.Text = Global.firstVal.ToString();
             }         
+        }
+
+        private void btnMS_Click(object sender, EventArgs e)
+        {
+
+            Global.memVal = Double.Parse(outptPreview.Text);
+            btnMC.Enabled = btnMR.Enabled = true;
+        }
+
+        private void btnMminus_Click(object sender, EventArgs e)
+        {
+
+            Global.memVal = Global.memVal - Double.Parse(outptPreview.Text);
+            btnMC.Enabled = btnMR.Enabled = true;
+        }
+
+        private void btnMplus_Click(object sender, EventArgs e)
+        {
+
+            Global.memVal = Global.memVal + Double.Parse(outptPreview.Text);
+            btnMC.Enabled = btnMR.Enabled = true;
+        }
+
+        private void btnMR_Click(object sender, EventArgs e)
+        {
+
+            outptPreview.Text = Global.memVal.ToString();
+        }
+
+        private void btnMC_Click(object sender, EventArgs e)
+        {
+
+            Global.memVal = 0;
+            btnMC.Enabled = btnMR.Enabled = false;
         }
     }
 }
