@@ -34,7 +34,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "2";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
             {
 
                 outptDisp.Text = "";
@@ -95,7 +95,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "1";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
             {
 
                 outptDisp.Text = "";
@@ -119,7 +119,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "3";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
             {
 
                 outptDisp.Text = "";
@@ -143,7 +143,7 @@ namespace Calculator_Requirement
                 outptPreview.Text = "4";
 
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
             {
 
                 outptDisp.Text = "";
@@ -166,7 +166,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "5";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
             {
 
                 outptDisp.Text = "";
@@ -189,7 +189,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "6";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
             {
 
                 outptDisp.Text = "";
@@ -212,7 +212,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "7";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
             {
 
                 outptDisp.Text = "";
@@ -235,7 +235,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "8";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
             {
 
                 outptDisp.Text = "";
@@ -258,7 +258,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "9";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
             {
 
                 outptDisp.Text = "";
@@ -281,7 +281,7 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "0";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
             {
 
                 outptDisp.Text = "";
@@ -598,7 +598,8 @@ namespace Calculator_Requirement
             {
 
                 outptDisp.Text = $"sqrt({outptPreview.Text})";
-                outptPreview.Text = Math.Sqrt(Double.Parse(outptPreview.Text)).ToString();
+                Global.output = Math.Sqrt(Double.Parse(outptPreview.Text));
+                outptPreview.Text = Global.output.ToString();
             }
         }
 
@@ -636,8 +637,8 @@ namespace Calculator_Requirement
         {
 
             outptDisp.Text = $"{outptPreview.Text}^2";
-            double converted = Double.Parse(outptPreview.Text) * Double.Parse(outptPreview.Text);
-            outptPreview.Text = converted.ToString();
+            Global.output = Double.Parse(outptPreview.Text) * Double.Parse(outptPreview.Text);
+            outptPreview.Text = Global.output.ToString();
         }
 
         private void btnFraction_Click(object sender, EventArgs e)
@@ -654,8 +655,8 @@ namespace Calculator_Requirement
             {
 
                 outptDisp.Text = $"1/({outptPreview.Text})";
-                double converted = 1/Double.Parse(outptPreview.Text);
-                outptPreview.Text = converted.ToString();
+                Global.output = 1/Double.Parse(outptPreview.Text);
+                outptPreview.Text = Global.output.ToString();
             }
         }
 
@@ -665,9 +666,9 @@ namespace Calculator_Requirement
         if ((Global.output.ToString() + Global.op) == outptDisp.Text)
             {
 
-                double convert = Double.Parse(outptPreview.Text) / 100;
-                outptDisp.Text = Global.output.ToString() + Global.op + convert.ToString();
-                outptPreview.Text = convert.ToString();
+                Global.firstVal = Double.Parse(outptPreview.Text) / 100;
+                outptDisp.Text = Global.output.ToString() + Global.op + Global.firstVal.ToString();
+                outptPreview.Text = Global.firstVal.ToString();
             }         
         }
     }
