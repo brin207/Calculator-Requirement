@@ -25,6 +25,7 @@ namespace Calculator_Requirement
             public static double firstVal = 0;
             public static string op = "";
             public static double memVal = 0;
+            public static bool inEq = false;
         }
         private void button6_Click(object sender, EventArgs e)
         {
@@ -34,12 +35,13 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "2";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "2";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -68,6 +70,7 @@ namespace Calculator_Requirement
                 outptDisp.Text = "";
                 outptPreview.Text = "0";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -95,12 +98,13 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "1";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "1";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -119,12 +123,13 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "3";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "3";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -143,12 +148,13 @@ namespace Calculator_Requirement
                 outptPreview.Text = "4";
 
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "4";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -166,12 +172,13 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "5";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "5";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -189,12 +196,13 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "6";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "6";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -212,12 +220,13 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "7";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "7";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -235,12 +244,13 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "8";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "8";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -258,12 +268,13 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "9";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "9";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -281,12 +292,13 @@ namespace Calculator_Requirement
 
                 outptPreview.Text = "0";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.output == Double.Parse(outptPreview.Text) || outptDisp.Text == Global.output.ToString() + Global.op + Global.firstVal.ToString())
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "0";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -298,7 +310,11 @@ namespace Calculator_Requirement
 
         private void btnDot_Click(object sender, EventArgs e)
         {
-            outptPreview.Text = outptPreview.Text + ".";
+            if (!outptPreview.Text.Contains("."))
+            {
+
+                outptPreview.Text = outptPreview.Text + ".";
+            }
         }
 
         private void btnEq_Click(object sender, EventArgs e)
@@ -308,8 +324,9 @@ namespace Calculator_Requirement
             {
 
                 outptDisp.Text = outptPreview.Text + "=";
+                Global.inEq = true;
             }
-            else if (outptDisp.Text == (Global.output.ToString() + Global.op + outptPreview.Text))
+            else if (outptDisp.Text == (Global.output.ToString() + Global.op + outptPreview.Text)) //for %
             {
 
                 outptDisp.AppendText("=");
@@ -342,6 +359,7 @@ namespace Calculator_Requirement
                         break;
                 }
 
+                Global.inEq = true;
                 outptPreview.Text = Global.output.ToString();
 
             }
@@ -389,6 +407,7 @@ namespace Calculator_Requirement
                     outptDisp.Text = outptPreview.Text + "/" + vars[1] + "=";
                 }
 
+                Global.inEq = true;
                 outptPreview.Text = Global.output.ToString();
             }
             else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
@@ -397,6 +416,7 @@ namespace Calculator_Requirement
                 outptDisp.Text = "";
                 outptPreview.Text = "0";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -432,6 +452,7 @@ namespace Calculator_Requirement
                         break;
                 }
 
+                Global.inEq = true;
                 outptPreview.Text = Global.output.ToString();
             }
         }
@@ -563,6 +584,7 @@ namespace Calculator_Requirement
             outptDisp.Text = "";
             outptPreview.Text = "0";
             Global.output = 0;
+            Global.inEq = false;
             btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
         }
 
@@ -600,6 +622,7 @@ namespace Calculator_Requirement
                 outptDisp.Text = $"sqrt({outptPreview.Text})";
                 Global.output = Math.Sqrt(Double.Parse(outptPreview.Text));
                 outptPreview.Text = Global.output.ToString();
+                Global.inEq = true;
             }
         }
 
@@ -616,6 +639,7 @@ namespace Calculator_Requirement
                 outptDisp.Text = "";
                 outptPreview.Text = "0";
                 Global.output = 0;
+                Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -639,6 +663,7 @@ namespace Calculator_Requirement
             outptDisp.Text = $"{outptPreview.Text}^2";
             Global.output = Double.Parse(outptPreview.Text) * Double.Parse(outptPreview.Text);
             outptPreview.Text = Global.output.ToString();
+            Global.inEq = true;
         }
 
         private void btnFraction_Click(object sender, EventArgs e)
@@ -657,6 +682,7 @@ namespace Calculator_Requirement
                 outptDisp.Text = $"1/({outptPreview.Text})";
                 Global.output = 1/Double.Parse(outptPreview.Text);
                 outptPreview.Text = Global.output.ToString();
+                Global.inEq = true;
             }
         }
 
@@ -669,6 +695,7 @@ namespace Calculator_Requirement
                 Global.firstVal = Double.Parse(outptPreview.Text) / 100;
                 outptDisp.Text = Global.output.ToString() + Global.op + Global.firstVal.ToString();
                 outptPreview.Text = Global.firstVal.ToString();
+                Global.inEq = true;
             }         
         }
 
