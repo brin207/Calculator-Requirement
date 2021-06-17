@@ -577,6 +577,7 @@ namespace Calculator_Requirement
 
             outptPreview.Text = "0";
             Global.op = "+";
+            Global.inEq = false;
         }
 
         private void btnNeg_Click(object sender, EventArgs e)
@@ -639,6 +640,7 @@ namespace Calculator_Requirement
 
             outptPreview.Text = "0";
             Global.op = "-";
+            Global.inEq = false;
         }
     
 
@@ -702,6 +704,7 @@ namespace Calculator_Requirement
 
             outptPreview.Text = "0";
             Global.op = "*";
+            Global.inEq = false;
         }
 
         private void btnDiv_Click(object sender, EventArgs e)
@@ -776,6 +779,7 @@ namespace Calculator_Requirement
                 }
             }
 
+            Global.inEq = false;
         }
 
         private void btnClr_Click(object sender, EventArgs e)
@@ -924,6 +928,7 @@ namespace Calculator_Requirement
         {
 
             outptPreview.Text = Global.memVal.ToString();
+            Global.inEq = true;
         }
 
         private void btnMC_Click(object sender, EventArgs e)
