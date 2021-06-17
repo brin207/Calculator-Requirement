@@ -519,12 +519,11 @@ namespace Calculator_Requirement
 
         private void btnPos_Click(object sender, EventArgs e)
         {
-            
-            Global.output = Double.Parse(outptPreview.Text) + Global.output;
 
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
+                Global.output = Double.Parse(outptPreview.Text);
                 outptDisp.AppendText(Global.output.ToString() + "+");
             }
             else if (outptDisp.Text.Contains("="))
@@ -571,6 +570,7 @@ namespace Calculator_Requirement
             else
             {
 
+                Global.output = Global.output + Double.Parse(outptPreview.Text);
                 outptDisp.Text = "";
                 outptDisp.AppendText(Global.output.ToString() + "+");
             }
