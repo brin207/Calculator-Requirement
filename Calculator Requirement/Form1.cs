@@ -896,7 +896,17 @@ namespace Calculator_Requirement
         if ((Global.output.ToString() + Global.op) == outptDisp.Text)
             {
 
-                Global.secondVal = Double.Parse(outptPreview.Text) / 100;
+                if (Global.op.Equals("+") || Global.op.Equals("-"))
+                {
+
+                    Global.secondVal = Global.output*(Double.Parse(outptPreview.Text) / 100);
+                }
+                else if (Global.op.Equals("*") || Global.op.Equals("/"))
+                {
+
+                    Global.secondVal = Double.Parse(outptPreview.Text) / 100;
+                }
+
                 outptDisp.Text = Global.output.ToString() + Global.op + Global.secondVal.ToString();
                 outptPreview.Text = Global.secondVal.ToString();
                 Global.inEq = true;
