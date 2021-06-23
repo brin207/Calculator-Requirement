@@ -846,6 +846,12 @@ namespace Calculator_Requirement
                 Global.inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
+            else if (Global.inEq == true)
+            {
+
+                outptDisp.Text = "";
+                Global.inEq = false;
+            }
             else
             {
                 if (outptPreview.Text.Length == 1)
