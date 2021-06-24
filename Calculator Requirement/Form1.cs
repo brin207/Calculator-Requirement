@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Calculator_Requirement;
 
 namespace Calculator_Requirement
 {
@@ -723,6 +724,8 @@ namespace Calculator_Requirement
 
                 outptDisp.Text = outptPreview.Text + "/";
                 Global.output = Double.Parse(outptPreview.Text);
+                outptPreview.Text = "0";
+                Global.op = "/";
             }
             else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
             {
