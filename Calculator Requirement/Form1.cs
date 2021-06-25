@@ -527,13 +527,13 @@ namespace Calculator_Requirement
                 Global.output = Double.Parse(outptPreview.Text);
                 outptDisp.AppendText(Global.output.ToString() + "+");
             }
-            else if (outptDisp.Text.Contains("="))
+            else if (outptDisp.Text.Contains("=") || outptDisp.Text.Contains("("))
             {
 
                 outptDisp.Text = outptPreview.Text + "+";
                 Global.output = Double.Parse(outptPreview.Text);
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
+            else //if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
             {
 
                 switch (Global.op)
@@ -568,13 +568,13 @@ namespace Calculator_Requirement
                 outptDisp.Text = Global.output.ToString() + "+";
                 outptPreview.Text = "0";
             }
-            else
+            /*else
             {
 
                 Global.output = Global.output + Double.Parse(outptPreview.Text);
                 outptDisp.Text = "";
                 outptDisp.AppendText(Global.output.ToString() + "+");
-            }
+            }*/
 
             outptPreview.Text = "0";
             Global.op = "+";
@@ -590,13 +590,13 @@ namespace Calculator_Requirement
                 Global.output = Double.Parse(outptPreview.Text);
                 outptDisp.AppendText(Global.output.ToString() + "-");
             }
-            else if (outptDisp.Text.Contains("="))
+            else if (outptDisp.Text.Contains("=") || outptDisp.Text.Contains("("))
             {
 
                 outptDisp.Text = outptPreview.Text + "-";
                 Global.output = Double.Parse(outptPreview.Text);
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
+            else //if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
             {
 
                 switch (Global.op)
@@ -631,13 +631,13 @@ namespace Calculator_Requirement
                 outptDisp.Text = Global.output.ToString() + "-";
                 outptPreview.Text = "0";
             }
-            else
+            /*else
             {
 
                 Global.output = Global.output - Double.Parse(outptPreview.Text);
                 outptDisp.Text = "";
                 outptDisp.AppendText(Global.output.ToString() + "-");
-            }
+            }*/
 
             outptPreview.Text = "0";
             Global.op = "-";
@@ -654,13 +654,13 @@ namespace Calculator_Requirement
                 Global.output = Double.Parse(outptPreview.Text);
                 outptDisp.AppendText(Global.output.ToString() + "*");
             }
-            else if (outptDisp.Text.Contains("="))
+            else if (outptDisp.Text.Contains("=") || outptDisp.Text.Contains("("))
             {
 
                 outptDisp.Text = outptPreview.Text + "*";
                 Global.output = Double.Parse(outptPreview.Text);
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
+            else //if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
             {
 
                 switch (Global.op)
@@ -695,13 +695,13 @@ namespace Calculator_Requirement
                 outptDisp.Text = Global.output.ToString() + "*";
                 outptPreview.Text = "0";
             }
-            else
+            /*else
             {
 
                 Global.output = Double.Parse(outptPreview.Text) * Global.output;
                 outptDisp.Text = "";
                 outptDisp.AppendText(Global.output.ToString() + "*");
-            }
+            }*/
 
             outptPreview.Text = "0";
             Global.op = "*";
@@ -716,18 +716,14 @@ namespace Calculator_Requirement
 
                 Global.output = Double.Parse(outptPreview.Text);
                 outptDisp.AppendText(Global.output.ToString() + "/");
-                outptPreview.Text = "0";
-                Global.op = "/";
             }
-            else if (outptDisp.Text.Contains("="))
+            else if (outptDisp.Text.Contains("=") || outptDisp.Text.Contains("("))
             {
 
                 outptDisp.Text = outptPreview.Text + "/";
                 Global.output = Double.Parse(outptPreview.Text);
-                outptPreview.Text = "0";
-                Global.op = "/";
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
+            else //if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
             {
 
                 switch (Global.op)
@@ -760,9 +756,8 @@ namespace Calculator_Requirement
                 }
 
                 outptDisp.Text = Global.output.ToString() + "/";
-                outptPreview.Text = "0";
             }
-            else
+            /*else
             {
 
                 if (outptPreview.Text == "0")
@@ -780,8 +775,10 @@ namespace Calculator_Requirement
                     outptPreview.Text = "0";
                     Global.op = "/";
                 }
-            }
+            }*/
 
+            outptPreview.Text = "0";
+            Global.op = "/";
             Global.inEq = false;
         }
 
@@ -873,7 +870,7 @@ namespace Calculator_Requirement
         private void btnSquared_Click(object sender, EventArgs e)
         {
 
-            outptDisp.Text = $"{outptPreview.Text}^2";
+            outptDisp.Text = $"({outptPreview.Text})^2";
             Global.output = Double.Parse(outptPreview.Text) * Double.Parse(outptPreview.Text);
             outptPreview.Text = Global.output.ToString();
             Global.inEq = true;
