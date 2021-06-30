@@ -18,37 +18,31 @@ namespace Calculator_Requirement
         {
             InitializeComponent();
         }
-
-        static class Global
-        {
-
-            public static double output = 0;
-            public static double secondVal = 0;
-            public static string op = "";
-            public static double memVal = 0;
-            public static bool inEq = false;
-        }
+            public double output = 0;
+            public double secondVal = 0;
+            public string op = "";
+            public double memVal = 0;
+            public bool inEq = false;
         private void button6_Click(object sender, EventArgs e)
         {
-
-            if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            if (((outptPreview.Text == "0") || (outptPreview.Text == "")) && (inEq == false))
             {
 
                 outptPreview.Text = "2";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "2";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString())) // for % reset inEq
+            else if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString())) // for % reset inEq
             {
 
-                outptDisp.Text = Global.output.ToString() + Global.op;
+                outptDisp.Text = output.ToString() + op;
                 outptPreview.Text = "2";
             }
             else
@@ -60,7 +54,6 @@ namespace Calculator_Requirement
 
         private void button10_Click(object sender, EventArgs e)
         {
-
             if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
             {
 
@@ -70,14 +63,13 @@ namespace Calculator_Requirement
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "0";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
@@ -86,38 +78,26 @@ namespace Calculator_Requirement
                 outptPreview.Text = "0";
             }
         }
-
-        private void calcDesign_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void outptPreview_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn1_Click(object sender, EventArgs e)
         {
-
-            if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            if (((outptPreview.Text == "0") || (outptPreview.Text == "")) && (inEq == false))
             {
 
                 outptPreview.Text = "1";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "1";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString())) // for % reset inEq
+            else if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString())) // for % reset inEq
             {
 
-                outptDisp.Text = Global.output.ToString() + Global.op;
+                outptDisp.Text = output.ToString() + op;
                 outptPreview.Text = "1";
             }
             else
@@ -126,29 +106,26 @@ namespace Calculator_Requirement
                 outptPreview.Text = outptPreview.Text + "1";
             }
         }
-    
-
         private void btn3_Click(object sender, EventArgs e)
         {
-
-            if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            if (((outptPreview.Text == "0") || (outptPreview.Text == "")) && (inEq == false))
             {
 
                 outptPreview.Text = "3";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "3";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString())) // for % reset inEq
+            else if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString())) // for % reset inEq
             {
 
-                outptDisp.Text = Global.output.ToString() + Global.op;
+                outptDisp.Text = output.ToString() + op;
                 outptPreview.Text = "3";
             }
             else
@@ -161,25 +138,25 @@ namespace Calculator_Requirement
         private void btn4_Click(object sender, EventArgs e)
         {
 
-            if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            if (((outptPreview.Text == "0") || (outptPreview.Text == "")) && (inEq == false))
             {
 
                 outptPreview.Text = "4";
 
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "4";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString())) // for % reset inEq
+            else if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString())) // for % reset inEq
             {
 
-                outptDisp.Text = Global.output.ToString() + Global.op;
+                outptDisp.Text = output.ToString() + op;
                 outptPreview.Text = "4";
             }
             else
@@ -192,24 +169,24 @@ namespace Calculator_Requirement
         private void btn5_Click(object sender, EventArgs e)
         {
 
-            if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            if (((outptPreview.Text == "0") || (outptPreview.Text == "")) && (inEq == false))
             {
 
                 outptPreview.Text = "5";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "5";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString())) // for % reset inEq
+            else if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString())) // for % reset inEq
             {
 
-                outptDisp.Text = Global.output.ToString() + Global.op;
+                outptDisp.Text = output.ToString() + op;
                 outptPreview.Text = "5";
             }
             else
@@ -222,24 +199,24 @@ namespace Calculator_Requirement
         private void btn6_Click(object sender, EventArgs e)
         {
 
-            if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            if (((outptPreview.Text == "0") || (outptPreview.Text == "")) && (inEq == false))
             {
 
                 outptPreview.Text = "6";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "6";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString())) // for % reset inEq
+            else if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString())) // for % reset inEq
             {
 
-                outptDisp.Text = Global.output.ToString() + Global.op;
+                outptDisp.Text = output.ToString() + op;
                 outptPreview.Text = "6";
             }
             else
@@ -252,24 +229,24 @@ namespace Calculator_Requirement
         private void btn7_Click(object sender, EventArgs e)
         {
 
-            if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            if (((outptPreview.Text == "0") || (outptPreview.Text == "")) && (inEq == false))
             {
 
                 outptPreview.Text = "7";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "7";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString())) // for % reset inEq
+            else if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString())) // for % reset inEq
             {
 
-                outptDisp.Text = Global.output.ToString() + Global.op;
+                outptDisp.Text = output.ToString() + op;
                 outptPreview.Text = "7";
             }
             else
@@ -282,24 +259,24 @@ namespace Calculator_Requirement
         private void btn8_Click(object sender, EventArgs e)
         {
 
-            if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            if (((outptPreview.Text == "0") || (outptPreview.Text == "")) && (inEq == false))
             {
 
                 outptPreview.Text = "8";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "8";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString())) // for % reset inEq
+            else if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString())) // for % reset inEq
             {
 
-                outptDisp.Text = Global.output.ToString() + Global.op;
+                outptDisp.Text = output.ToString() + op;
                 outptPreview.Text = "8";
             }
             else
@@ -312,24 +289,24 @@ namespace Calculator_Requirement
         private void btn9_Click(object sender, EventArgs e)
         {
 
-            if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            if (((outptPreview.Text == "0") || (outptPreview.Text == "")) && (inEq == false))
             {
 
                 outptPreview.Text = "9";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "9";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString())) // for % reset inEq
+            else if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString())) // for % reset inEq
             {
 
-                outptDisp.Text = Global.output.ToString() + Global.op;
+                outptDisp.Text = output.ToString() + op;
                 outptPreview.Text = "9";
             }
             else
@@ -338,28 +315,27 @@ namespace Calculator_Requirement
                 outptPreview.Text = outptPreview.Text + "9";
             }
         }
-
         private void btn0_Click(object sender, EventArgs e)
         {
 
-            if ((outptPreview.Text == "0") || (outptPreview.Text == ""))
+            if (((outptPreview.Text == "0") || (outptPreview.Text == "")) && (inEq == false))
             {
 
                 outptPreview.Text = "0";
             }
-            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || Global.inEq == true)
+            else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input" || inEq == true)
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "0";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
-            else if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString())) // for % reset inEq
+            else if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString())) // for % reset inEq
             {
 
-                outptDisp.Text = Global.output.ToString() + Global.op;
+                outptDisp.Text = output.ToString() + op;
                 outptPreview.Text = "0";
             }
             else
@@ -368,7 +344,6 @@ namespace Calculator_Requirement
                 outptPreview.Text = outptPreview.Text + "0";
             }
         }
-
         private void btnDot_Click(object sender, EventArgs e)
         {
             if (!outptPreview.Text.Contains("."))
@@ -385,23 +360,23 @@ namespace Calculator_Requirement
             {
 
                 outptDisp.Text = outptPreview.Text + "=";
-                Global.inEq = true;
+                inEq = true;
             }
-            else if (outptDisp.Text == (Global.output.ToString() + Global.op + outptPreview.Text)) //for %
+            else if (outptDisp.Text == (output.ToString() + op + outptPreview.Text)) //for %
             {
 
                 outptDisp.AppendText("=");
-                switch (Global.op)
+                switch (op)
                 {
 
                     case "+":
-                        Global.output = Global.output + Double.Parse(outptPreview.Text);
+                        output = output + Double.Parse(outptPreview.Text);
                         break;
                     case "-":
-                        Global.output = Global.output - Double.Parse(outptPreview.Text);
+                        output = output - Double.Parse(outptPreview.Text);
                         break;
                     case "*":
-                        Global.output = Global.output * Double.Parse(outptPreview.Text);
+                        output = output * Double.Parse(outptPreview.Text);
                         break;
                     case "/":
                         if (outptPreview.Text == "0")
@@ -413,15 +388,15 @@ namespace Calculator_Requirement
                         else
                         {
 
-                            Global.output = Global.output / Double.Parse(outptPreview.Text);
+                            output = output / Double.Parse(outptPreview.Text);
                         }
                         break;
                     default:
                         break;
                 }
 
-                Global.inEq = true;
-                outptPreview.Text = Global.output.ToString();
+                inEq = true;
+                outptPreview.Text = output.ToString();
 
             }
             else if (outptDisp.Text.Contains("="))
@@ -432,10 +407,10 @@ namespace Calculator_Requirement
 
                     string[] vars = outptDisp.Text.Split('+', '=');
    
-                    Global.output = Global.output + Double.Parse(vars[1]);
+                    output = output + Double.Parse(vars[1]);
                     outptDisp.Text = outptPreview.Text + "+" + vars[1] + "=";
                 }
-                else if (Global.op == "-")
+                else if (op == "-")
                 {
 
                     string[] vars = outptDisp.Text.Split('-', '=');
@@ -443,13 +418,13 @@ namespace Calculator_Requirement
                     if (vars[0] == "")
                     {
 
-                        Global.output = Global.output - Double.Parse(vars[2]);
+                        output = output - Double.Parse(vars[2]);
                         outptDisp.Text = outptPreview.Text + "-" + vars[2] + "=";
                     }
                     else
                     {
 
-                        Global.output = Global.output - Double.Parse(vars[1]);
+                        output = output - Double.Parse(vars[1]);
                         outptDisp.Text = outptPreview.Text + "-" + vars[1] + "=";
                     }
                 }
@@ -457,44 +432,44 @@ namespace Calculator_Requirement
                 {
 
                     string[] vars = outptDisp.Text.Split('*', '=');
-                    Global.output = Global.output * Double.Parse(vars[1]);
+                    output = output * Double.Parse(vars[1]);
                     outptDisp.Text = outptPreview.Text + "*" + vars[1] + "=";
                 }
                 else if (outptDisp.Text.Contains("/"))
                 {
 
                     string[] vars = outptDisp.Text.Split('/', '=');
-                    Global.output = Global.output / Double.Parse(vars[1]);
+                    output = output / Double.Parse(vars[1]);
                     outptDisp.Text = outptPreview.Text + "/" + vars[1] + "=";
                 }
 
-                Global.inEq = true;
-                outptPreview.Text = Global.output.ToString();
+                inEq = true;
+                outptPreview.Text = output.ToString();
             }
             else if (outptPreview.Text == "Cannot divide by zero" || outptPreview.Text == "Invalid Input")
             {
 
                 outptDisp.Text = "";
                 outptPreview.Text = "0";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
             else
             {
 
                 outptDisp.Text = outptDisp.Text + outptPreview.Text + "=";
-                switch (Global.op)
+                switch (op)
                 {
 
                     case "+":
-                        Global.output = Global.output + Double.Parse(outptPreview.Text);
+                        output = output + Double.Parse(outptPreview.Text);
                         break;
                     case "-":
-                        Global.output = Global.output - Double.Parse(outptPreview.Text);
+                        output = output - Double.Parse(outptPreview.Text);
                         break;
                     case "*":
-                        Global.output = Global.output * Double.Parse(outptPreview.Text);
+                        output = output * Double.Parse(outptPreview.Text);
                         break;
                     case "/":
                         if (outptPreview.Text == "0")
@@ -506,15 +481,15 @@ namespace Calculator_Requirement
                         else
                         {
 
-                            Global.output = Global.output / Double.Parse(outptPreview.Text);
+                            output = output / Double.Parse(outptPreview.Text);
                         }
                         break;
                     default:
                         break;
                 }
 
-                Global.inEq = true;
-                outptPreview.Text = Global.output.ToString();
+                inEq = true;
+                outptPreview.Text = output.ToString();
             }
         }
 
@@ -524,29 +499,29 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                Global.output = Double.Parse(outptPreview.Text);
-                outptDisp.AppendText(Global.output.ToString() + "+");
+                output = Double.Parse(outptPreview.Text);
+                outptDisp.AppendText(output.ToString() + "+");
             }
             else if (outptDisp.Text.Contains("=") || outptDisp.Text.Contains("("))
             {
 
                 outptDisp.Text = outptPreview.Text + "+";
-                Global.output = Double.Parse(outptPreview.Text);
+                output = Double.Parse(outptPreview.Text);
             }
-            else //if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
+            else //if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString()))
             {
 
-                switch (Global.op)
+                switch (op)
                 {
 
                     case "+":
-                        Global.output = Global.output + Double.Parse(outptPreview.Text);
+                        output = output + Double.Parse(outptPreview.Text);
                         break;
                     case "-":
-                        Global.output = Global.output - Double.Parse(outptPreview.Text);
+                        output = output - Double.Parse(outptPreview.Text);
                         break;
                     case "*":
-                        Global.output = Global.output * Double.Parse(outptPreview.Text);
+                        output = output * Double.Parse(outptPreview.Text);
                         break;
                     case "/":
                         if (outptPreview.Text == "0")
@@ -558,27 +533,27 @@ namespace Calculator_Requirement
                         else
                         {
 
-                            Global.output = Global.output / Double.Parse(outptPreview.Text);
+                            output = output / Double.Parse(outptPreview.Text);
                         }
                         break;
                     default:
                         break;
                 }
 
-                outptDisp.Text = Global.output.ToString() + "+";
+                outptDisp.Text = output.ToString() + "+";
                 outptPreview.Text = "0";
             }
             /*else
             {
 
-                Global.output = Global.output + Double.Parse(outptPreview.Text);
+                output = output + Double.Parse(outptPreview.Text);
                 outptDisp.Text = "";
-                outptDisp.AppendText(Global.output.ToString() + "+");
+                outptDisp.AppendText(output.ToString() + "+");
             }*/
 
             outptPreview.Text = "0";
-            Global.op = "+";
-            Global.inEq = false;
+            op = "+";
+            inEq = false;
         }
 
         private void btnNeg_Click(object sender, EventArgs e)
@@ -587,29 +562,29 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                Global.output = Double.Parse(outptPreview.Text);
-                outptDisp.AppendText(Global.output.ToString() + "-");
+                output = Double.Parse(outptPreview.Text);
+                outptDisp.AppendText(output.ToString() + "-");
             }
             else if (outptDisp.Text.Contains("=") || outptDisp.Text.Contains("("))
             {
 
                 outptDisp.Text = outptPreview.Text + "-";
-                Global.output = Double.Parse(outptPreview.Text);
+                output = Double.Parse(outptPreview.Text);
             }
-            else //if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
+            else //if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString()))
             {
 
-                switch (Global.op)
+                switch (op)
                 {
 
                     case "+":
-                        Global.output = Global.output + Double.Parse(outptPreview.Text);
+                        output = output + Double.Parse(outptPreview.Text);
                         break;
                     case "-":
-                        Global.output = Global.output - Double.Parse(outptPreview.Text);
+                        output = output - Double.Parse(outptPreview.Text);
                         break;
                     case "*":
-                        Global.output = Global.output * Double.Parse(outptPreview.Text);
+                        output = output * Double.Parse(outptPreview.Text);
                         break;
                     case "/":
                         if (outptPreview.Text == "0")
@@ -621,27 +596,27 @@ namespace Calculator_Requirement
                         else
                         {
 
-                            Global.output = Global.output / Double.Parse(outptPreview.Text);
+                            output = output / Double.Parse(outptPreview.Text);
                         }
                         break;
                     default:
                         break;
                 }
 
-                outptDisp.Text = Global.output.ToString() + "-";
+                outptDisp.Text = output.ToString() + "-";
                 outptPreview.Text = "0";
             }
             /*else
             {
 
-                Global.output = Global.output - Double.Parse(outptPreview.Text);
+                output = output - Double.Parse(outptPreview.Text);
                 outptDisp.Text = "";
-                outptDisp.AppendText(Global.output.ToString() + "-");
+                outptDisp.AppendText(output.ToString() + "-");
             }*/
 
             outptPreview.Text = "0";
-            Global.op = "-";
-            Global.inEq = false;
+            op = "-";
+            inEq = false;
         }
     
 
@@ -651,29 +626,29 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                Global.output = Double.Parse(outptPreview.Text);
-                outptDisp.AppendText(Global.output.ToString() + "*");
+                output = Double.Parse(outptPreview.Text);
+                outptDisp.AppendText(output.ToString() + "*");
             }
             else if (outptDisp.Text.Contains("=") || outptDisp.Text.Contains("("))
             {
 
                 outptDisp.Text = outptPreview.Text + "*";
-                Global.output = Double.Parse(outptPreview.Text);
+                output = Double.Parse(outptPreview.Text);
             }
-            else //if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
+            else //if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString()))
             {
 
-                switch (Global.op)
+                switch (op)
                 {
 
                     case "+":
-                        Global.output = Global.output + Double.Parse(outptPreview.Text);
+                        output = output + Double.Parse(outptPreview.Text);
                         break;
                     case "-":
-                        Global.output = Global.output - Double.Parse(outptPreview.Text);
+                        output = output - Double.Parse(outptPreview.Text);
                         break;
                     case "*":
-                        Global.output = Global.output * Double.Parse(outptPreview.Text);
+                        output = output * Double.Parse(outptPreview.Text);
                         break;
                     case "/":
                         if (outptPreview.Text == "0")
@@ -685,27 +660,27 @@ namespace Calculator_Requirement
                         else
                         {
 
-                            Global.output = Global.output / Double.Parse(outptPreview.Text);
+                            output = output / Double.Parse(outptPreview.Text);
                         }
                         break;
                     default:
                         break;
                 }
 
-                outptDisp.Text = Global.output.ToString() + "*";
+                outptDisp.Text = output.ToString() + "*";
                 outptPreview.Text = "0";
             }
             /*else
             {
 
-                Global.output = Double.Parse(outptPreview.Text) * Global.output;
+                output = Double.Parse(outptPreview.Text) * output;
                 outptDisp.Text = "";
-                outptDisp.AppendText(Global.output.ToString() + "*");
+                outptDisp.AppendText(output.ToString() + "*");
             }*/
 
             outptPreview.Text = "0";
-            Global.op = "*";
-            Global.inEq = false;
+            op = "*";
+            inEq = false;
         }
 
         private void btnDiv_Click(object sender, EventArgs e)
@@ -714,29 +689,29 @@ namespace Calculator_Requirement
             if (outptDisp.Text == "0" || outptDisp.Text == "")
             {
 
-                Global.output = Double.Parse(outptPreview.Text);
-                outptDisp.AppendText(Global.output.ToString() + "/");
+                output = Double.Parse(outptPreview.Text);
+                outptDisp.AppendText(output.ToString() + "/");
             }
             else if (outptDisp.Text.Contains("=") || outptDisp.Text.Contains("("))
             {
 
                 outptDisp.Text = outptPreview.Text + "/";
-                Global.output = Double.Parse(outptPreview.Text);
+                output = Double.Parse(outptPreview.Text);
             }
-            else //if ((outptDisp.Text == Global.output.ToString() + Global.op + Global.secondVal.ToString()) && (outptPreview.Text == Global.secondVal.ToString()))
+            else //if ((outptDisp.Text == output.ToString() + op + secondVal.ToString()) && (outptPreview.Text == secondVal.ToString()))
             {
 
-                switch (Global.op)
+                switch (op)
                 {
 
                     case "+":
-                        Global.output = Global.output + Double.Parse(outptPreview.Text);
+                        output = output + Double.Parse(outptPreview.Text);
                         break;
                     case "-":
-                        Global.output = Global.output - Double.Parse(outptPreview.Text);
+                        output = output - Double.Parse(outptPreview.Text);
                         break;
                     case "*":
-                        Global.output = Global.output * Double.Parse(outptPreview.Text);
+                        output = output * Double.Parse(outptPreview.Text);
                         break;
                     case "/":
                         if (outptPreview.Text == "0")
@@ -748,14 +723,14 @@ namespace Calculator_Requirement
                         else
                         {
 
-                            Global.output = Global.output / Double.Parse(outptPreview.Text);
+                            output = output / Double.Parse(outptPreview.Text);
                         }
                         break;
                     default:
                         break;
                 }
 
-                outptDisp.Text = Global.output.ToString() + "/";
+                outptDisp.Text = output.ToString() + "/";
             }
             /*else
             {
@@ -769,17 +744,17 @@ namespace Calculator_Requirement
                 else
                 {
 
-                    Global.output = Global.output / Double.Parse(outptPreview.Text);
+                    output = output / Double.Parse(outptPreview.Text);
                     outptDisp.Text = "";
-                    outptDisp.AppendText(Global.output.ToString() + "/");
+                    outptDisp.AppendText(output.ToString() + "/");
                     outptPreview.Text = "0";
-                    Global.op = "/";
+                    op = "/";
                 }
             }*/
 
             outptPreview.Text = "0";
-            Global.op = "/";
-            Global.inEq = false;
+            op = "/";
+            inEq = false;
         }
 
         private void btnClr_Click(object sender, EventArgs e)
@@ -787,16 +762,10 @@ namespace Calculator_Requirement
 
             outptDisp.Text = "";
             outptPreview.Text = "0";
-            Global.output = 0;
-            Global.inEq = false;
+            output = 0;
+            inEq = false;
             btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPosNeg_Click(object sender, EventArgs e)
         {
 
@@ -824,9 +793,9 @@ namespace Calculator_Requirement
             {
 
                 outptDisp.Text = $"sqrt({outptPreview.Text})";
-                Global.output = Math.Sqrt(Double.Parse(outptPreview.Text));
-                outptPreview.Text = Global.output.ToString();
-                Global.inEq = true;
+                output = Math.Sqrt(Double.Parse(outptPreview.Text));
+                outptPreview.Text = output.ToString();
+                inEq = true;
             }
         }
 
@@ -842,15 +811,15 @@ namespace Calculator_Requirement
 
                 outptDisp.Text = "";
                 outptPreview.Text = "0";
-                Global.output = 0;
-                Global.inEq = false;
+                output = 0;
+                inEq = false;
                 btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = true;
             }
-            else if (Global.inEq == true)
+            else if (inEq == true)
             {
 
                 outptDisp.Text = "";
-                Global.inEq = false;
+                inEq = false;
             }
             else
             {
@@ -871,9 +840,9 @@ namespace Calculator_Requirement
         {
 
             outptDisp.Text = $"({outptPreview.Text})^2";
-            Global.output = Double.Parse(outptPreview.Text) * Double.Parse(outptPreview.Text);
-            outptPreview.Text = Global.output.ToString();
-            Global.inEq = true;
+            output = Double.Parse(outptPreview.Text) * Double.Parse(outptPreview.Text);
+            outptPreview.Text = output.ToString();
+            inEq = true;
         }
 
         private void btnFraction_Click(object sender, EventArgs e)
@@ -890,67 +859,67 @@ namespace Calculator_Requirement
             {
 
                 outptDisp.Text = $"1/({outptPreview.Text})";
-                Global.output = 1/Double.Parse(outptPreview.Text);
-                outptPreview.Text = Global.output.ToString();
-                Global.inEq = true;
+                output = 1/Double.Parse(outptPreview.Text);
+                outptPreview.Text = output.ToString();
+                inEq = true;
             }
         }
 
         private void btnPercent_Click(object sender, EventArgs e)
         {
 
-        if ((Global.output.ToString() + Global.op) == outptDisp.Text)
+        if ((output.ToString() + op) == outptDisp.Text)
             {
 
-                if (Global.op.Equals("+") || Global.op.Equals("-"))
+                if (op.Equals("+") || op.Equals("-"))
                 {
 
-                    Global.secondVal = Global.output*(Double.Parse(outptPreview.Text) / 100);
+                    secondVal = output*(Double.Parse(outptPreview.Text) / 100);
                 }
-                else if (Global.op.Equals("*") || Global.op.Equals("/"))
+                else if (op.Equals("*") || op.Equals("/"))
                 {
 
-                    Global.secondVal = Double.Parse(outptPreview.Text) / 100;
+                    secondVal = Double.Parse(outptPreview.Text) / 100;
                 }
 
-                outptDisp.Text = Global.output.ToString() + Global.op + Global.secondVal.ToString();
-                outptPreview.Text = Global.secondVal.ToString();
-                Global.inEq = true;
+                outptDisp.Text = output.ToString() + op + secondVal.ToString();
+                outptPreview.Text = secondVal.ToString();
+                inEq = true;
             }         
         }
 
         private void btnMS_Click(object sender, EventArgs e)
         {
 
-            Global.memVal = Double.Parse(outptPreview.Text);
+            memVal = Double.Parse(outptPreview.Text);
             btnMC.Enabled = btnMR.Enabled = true;
         }
 
         private void btnMminus_Click(object sender, EventArgs e)
         {
 
-            Global.memVal = Global.memVal - Double.Parse(outptPreview.Text);
+            memVal = memVal - Double.Parse(outptPreview.Text);
             btnMC.Enabled = btnMR.Enabled = true;
         }
 
         private void btnMplus_Click(object sender, EventArgs e)
         {
 
-            Global.memVal = Global.memVal + Double.Parse(outptPreview.Text);
+            memVal = memVal + Double.Parse(outptPreview.Text);
             btnMC.Enabled = btnMR.Enabled = true;
         }
 
         private void btnMR_Click(object sender, EventArgs e)
         {
 
-            outptPreview.Text = Global.memVal.ToString();
-            Global.inEq = true;
+            outptPreview.Text = memVal.ToString();
+            inEq = true;
         }
 
         private void btnMC_Click(object sender, EventArgs e)
         {
 
-            Global.memVal = 0;
+            memVal = 0;
             btnMC.Enabled = btnMR.Enabled = false;
         }
     }

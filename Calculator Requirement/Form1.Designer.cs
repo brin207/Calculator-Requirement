@@ -77,7 +77,6 @@ namespace Calculator_Requirement
             this.outptPreview.TabIndex = 0;
             this.outptPreview.Text = "0";
             this.outptPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.outptPreview.TextChanged += new System.EventHandler(this.outptPreview_TextChanged);
             // 
             // btn7
             // 
@@ -380,7 +379,6 @@ namespace Calculator_Requirement
             this.outptDisp.Size = new System.Drawing.Size(362, 34);
             this.outptDisp.TabIndex = 20;
             this.outptDisp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.outptDisp.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnPosNeg
             // 
@@ -603,7 +601,6 @@ namespace Calculator_Requirement
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
-            this.Load += new System.EventHandler(this.calcDesign_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
