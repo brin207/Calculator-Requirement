@@ -68,12 +68,12 @@ namespace Calculator_Requirement
             this.outptPreview.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.outptPreview.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.outptPreview.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.outptPreview.Font = new System.Drawing.Font("Segoe UI Semibold", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.outptPreview.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.outptPreview.ForeColor = System.Drawing.SystemColors.Window;
             this.outptPreview.Location = new System.Drawing.Point(11, 74);
             this.outptPreview.Name = "outptPreview";
             this.outptPreview.ReadOnly = true;
-            this.outptPreview.Size = new System.Drawing.Size(362, 56);
+            this.outptPreview.Size = new System.Drawing.Size(362, 45);
             this.outptPreview.TabIndex = 0;
             this.outptPreview.Text = "0";
             this.outptPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -188,7 +188,7 @@ namespace Calculator_Requirement
             this.btn2.TabIndex = 7;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = false;
-            this.btn2.Click += new System.EventHandler(this.button6_Click);
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn3
             // 
@@ -348,7 +348,7 @@ namespace Calculator_Requirement
             this.btnClrPrev.TabIndex = 18;
             this.btnClrPrev.Text = "CE";
             this.btnClrPrev.UseVisualStyleBackColor = false;
-            this.btnClrPrev.Click += new System.EventHandler(this.button1_Click);
+            this.btnClrPrev.Click += new System.EventHandler(this.btnClrPrev_Click);
             // 
             // btnClrAll
             // 
@@ -426,7 +426,7 @@ namespace Calculator_Requirement
             this.btnSquareRt.TabIndex = 23;
             this.btnSquareRt.Text = "sqrt(x)";
             this.btnSquareRt.UseVisualStyleBackColor = false;
-            this.btnSquareRt.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnSquareRt.Click += new System.EventHandler(this.btnSquareRt_Click);
             // 
             // btnSquared
             // 
