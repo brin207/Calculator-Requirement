@@ -12,6 +12,5 @@ namespace Calculator_Requirement
         public double memVal = 0;
         public bool inEq = false;
 
-
     }
 }
