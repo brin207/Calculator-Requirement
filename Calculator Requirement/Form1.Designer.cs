@@ -68,12 +68,12 @@ namespace Calculator_Requirement
             this.outptPreview.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.outptPreview.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.outptPreview.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.outptPreview.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.outptPreview.Font = new System.Drawing.Font("Segoe UI Semibold", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.outptPreview.ForeColor = System.Drawing.SystemColors.Window;
             this.outptPreview.Location = new System.Drawing.Point(11, 74);
             this.outptPreview.Name = "outptPreview";
             this.outptPreview.ReadOnly = true;
-            this.outptPreview.Size = new System.Drawing.Size(362, 45);
+            this.outptPreview.Size = new System.Drawing.Size(362, 51);
             this.outptPreview.TabIndex = 0;
             this.outptPreview.Text = "0";
             this.outptPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
