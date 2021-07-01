@@ -690,16 +690,19 @@ namespace Calculator_Requirement
         {
             memVal = Double.Parse(outptPreview.Text);
             btnMC.Enabled = btnMR.Enabled = true;
+            inEq = true;
         }
         private void btnMminus_Click(object sender, EventArgs e)
         {
             memVal = memVal - Double.Parse(outptPreview.Text);
             btnMC.Enabled = btnMR.Enabled = true;
+            inEq = true;
         }
         private void btnMplus_Click(object sender, EventArgs e)
         {
             memVal = memVal + Double.Parse(outptPreview.Text);
             btnMC.Enabled = btnMR.Enabled = true;
+            inEq = true;
         }
         private void btnMR_Click(object sender, EventArgs e)
         {
