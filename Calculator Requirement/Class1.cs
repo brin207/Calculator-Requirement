@@ -6,12 +6,16 @@ namespace Calculator_Requirement
 {
     class Class1
     {
-        public double output = 0;
-        public double secondVal = 0;
-        public string op = "";
-        public double memVal = 0;
-        public bool inEq = false;
+        private double output = 0;
+        private double secondVal = 0;
+        private string op = "";
+        private double memVal = 0;
+        private bool inEq = false;
 
-
+        public double Output { get => output; set => output = value; }
+        public double SecondVal { get => secondVal; set => secondVal = value; }
+        public string Op { get => op; set => op = value; }
+        public double MemVal { get => memVal; set => memVal = value; }
+        public bool InEq { get => inEq; set => inEq = value; }
     }
 }
