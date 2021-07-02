@@ -477,7 +477,7 @@ namespace Calculator_Requirement
                 outptDisp.Text = outptPreview.Text + "*";
                 clss.output = Double.Parse(outptPreview.Text);
             }
-            else //if ((outptDisp.Text == clss.output.ToString() + clss.op + clss.secondVal.ToString()) && (outptPreview.Text == clss.secondVal.ToString()))
+            else
             {
                 switch (clss.op)
                 {
@@ -509,13 +509,6 @@ namespace Calculator_Requirement
                 outptDisp.Text = clss.output.ToString() + "*";
                 outptPreview.Text = "0";
             }
-            /*else
-            {
-
-                clss.output = Double.Parse(outptPreview.Text) * clss.output;
-                outptDisp.Text = "";
-                outptDisp.AppendText(clss.output.ToString() + "*");
-            }*/
             outptPreview.Text = "0";
             clss.op = "*";
             clss.inEq = false;
@@ -532,7 +525,7 @@ namespace Calculator_Requirement
                 outptDisp.Text = outptPreview.Text + "/";
                 clss.output = Double.Parse(outptPreview.Text);
             }
-            else //if ((outptDisp.Text == clss.output.ToString() + clss.op + clss.secondVal.ToString()) && (outptPreview.Text == clss.secondVal.ToString()))
+            else
             {
                 switch (clss.op)
                 {
@@ -561,25 +554,6 @@ namespace Calculator_Requirement
                 }
                 outptDisp.Text = clss.output.ToString() + "/";
             }
-            /*else
-            {
-
-                if (outptPreview.Text == "0")
-                {
-
-                    outptPreview.Text = "Cannot divide by zero";
-                    btnPercent.Enabled = btnFraction.Enabled = btnSquared.Enabled = btnSquareRt.Enabled = btnDiv.Enabled = btnx.Enabled = btnNeg.Enabled = btnPos.Enabled = btnDot.Enabled = btnPosNeg.Enabled = false;
-                }
-                else
-                {
-
-                    clss.output = clss.output / Double.Parse(outptPreview.Text);
-                    outptDisp.Text = "";
-                    outptDisp.AppendText(clss.output.ToString() + "/");
-                    outptPreview.Text = "0";
-                    clss.op = "/";
-                }
-            }*/
             outptPreview.Text = "0";
             clss.op = "/";
             clss.inEq = false;
@@ -649,7 +623,6 @@ namespace Calculator_Requirement
             outptPreview.Text = clss.output.ToString();
             clss.inEq = true;
         }
-
         private void btnFraction_Click(object sender, EventArgs e)
         {
             if (Double.Parse(outptPreview.Text) == 0)
